@@ -1,0 +1,522 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="AsReq" width="1280" height="720" titletext="New Form" onload="AsReq_onload">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Div id="Div00" taborder="0" left="50" top="20" width="900" height="30" cssclass="div_WF_Search">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="접수 번호" left="0" top="5" width="120" height="20" cssclass="sta_WF_SearchLabel"/>
+              <Static id="Static01" taborder="1" text="접수일" left="450" top="5" width="120" height="20" cssclass="sta_WF_SearchLabel"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Edit id="edtReception" taborder="1" left="180" top="25" width="220" height="20" readonly="true"/>
+        <Calendar id="calIst" taborder="2" left="620" top="25" width="150" height="20" readonly="true"/>
+        <Div id="Div01" taborder="3" text="고객 정보" left="50" top="70" width="900" height="20" cssclass="div_WF_Search" font="bold 13px/normal &quot;Verdana&quot;,&quot;Malgun Gothic&quot;"/>
+        <Div id="Div02" taborder="4" left="50" top="90" width="900" height="205" cssclass="div_WF_Search" text="">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="성명" left="0" top="0" width="120" height="20" cssclass="sta_WF_SearchLabel"/>
+              <Static id="Static01" taborder="1" text="연락처" left="0" top="25" width="120" height="20" cssclass="sta_WF_SearchLabel"/>
+              <Static id="Static02" taborder="2" text="주소" left="0" top="50" width="120" height="20" cssclass="sta_WF_SearchLabel"/>
+              <Static id="Static03" taborder="3" text="A/S설치기사" left="0" top="75" width="120" height="20" cssclass="sta_WF_SearchLabel"/>
+              <Static id="Static04" taborder="4" text="차종/신청대수" left="0" top="100" width="120" height="20" cssclass="sta_WF_SearchLabel"/>
+              <Static id="Static05" taborder="5" text="A/S방문희망일" left="0" top="125" width="120" height="20" cssclass="sta_WF_SearchLabel"/>
+              <Static id="Static06" taborder="6" text="A/S내용" left="0" top="150" width="120" height="20" cssclass="sta_WF_SearchLabel"/>
+              <Static id="Static07" taborder="7" text="A/S취소사유" left="0" top="175" width="120" height="20" cssclass="sta_WF_SearchLabel"/>
+              <Static id="Static08" taborder="8" text="구분" left="450" top="0" width="120" height="20" cssclass="sta_WF_SearchLabel"/>
+              <Static id="Static10" taborder="9" text="A/S진행" left="450" top="75" width="120" height="20" cssclass="sta_WF_SearchLabel"/>
+              <Static id="Static11" taborder="10" text="취소일" left="614" top="175" width="120" height="20" cssclass="sta_WF_SearchLabel"/>
+              <Static id="Static12" taborder="11" text="충전기모델" left="450" top="100" width="120" height="20" cssclass="sta_WF_SearchLabel"/>
+              <Static id="Static09" taborder="12" text="Email" left="450" top="25" width="120" height="20" cssclass="sta_WF_SearchLabel"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Combo id="cmbAsEng" taborder="5" text="Combo00" left="180" top="166" width="150" height="20" innerdataset="ds_asEng" datacolumn="userName" codecolumn="userId"/>
+        <Edit id="edtCname" taborder="6" left="180" top="90" width="140" height="20" readonly="true"/>
+        <Edit id="edtCphone" taborder="7" left="180" top="116" width="140" height="20" readonly="true"/>
+        <Edit id="edtAddr" taborder="8" left="180" top="141" width="140" height="20" readonly="true"/>
+        <Edit id="edtCar" taborder="9" left="180" top="191" width="140" height="20" readonly="true"/>
+        <Edit id="edtAs" taborder="10" left="180" top="241" width="140" height="20"/>
+        <Edit id="edtCan" taborder="11" left="180" top="266" width="140" height="20"/>
+        <Edit id="edtType" taborder="12" left="621" top="91" width="140" height="20" readonly="true"/>
+        <Edit id="edtCharge" taborder="13" left="621" top="192" width="140" height="20" readonly="true"/>
+        <Combo id="cmbSta" taborder="14" text="Combo01" left="621" top="166" width="150" height="20" innerdataset="ds_sta" datacolumn="comboName" codecolumn="comboCode" onitemchanged="cmbSta_onitemchanged"/>
+        <Combo id="cmbYear" taborder="15" left="180" width="150" height="20" innerdataset="ds_year" datacolumn="comboName" codecolumn="comboCode" value="" index="0" autoselect="true" text="선택" top="217"/>
+        <Static id="Static01" taborder="16" text="년" left="295" top="-33" width="15" height="15"/>
+        <Combo id="cmbMonth" taborder="17" left="371" top="217" width="60" height="20" innerdataset="ds_month" datacolumn="comboName" codecolumn="comboCode" value="01" text="1" index="0"/>
+        <Static id="Static02" taborder="18" text="월" left="390" top="-33" width="15" height="15"/>
+        <Combo id="cmbDay" taborder="19" left="466" top="217" width="60" height="20" innerdataset="ds_day" datacolumn="comboName" codecolumn="comboCode" value="" index="0" text="선택"/>
+        <Static id="Static03" taborder="20" text="일" left="485" top="-33" width="15" height="15"/>
+        <Radio id="Radio00" taborder="21" left="561" top="217" width="150" height="20" innerdataset="ds_time" datacolumn="comboName" codecolumn="comboCode" direction="vertical"/>
+        <Combo id="cmbHour" taborder="22" left="721" top="217" width="60" height="20" innerdataset="ds_hour" datacolumn="comboName" codecolumn="comboCode" value="" index="0" text="선택"/>
+        <Static id="Static04" taborder="23" text="시" left="740" top="-33" height="15" width="15"/>
+        <Static id="Static01_00" taborder="24" text="년" left="346" top="220" width="15" height="15"/>
+        <Static id="Static02_00" taborder="25" text="월" left="441" top="220" width="15" height="15"/>
+        <Static id="Static03_00" taborder="26" text="일" left="536" top="220" width="15" height="15"/>
+        <Static id="Static04_00" taborder="27" text="시" left="791" top="220" height="15" width="15"/>
+        <Button id="btnList" taborder="28" text="AS 목록" left="570" top="315" width="120" height="50"/>
+        <Button id="btnUdt" taborder="29" text="수정" left="700" top="315" width="120" height="50"/>
+        <Button id="btnIns" taborder="30" text="신규등록" left="830" top="315" width="120" height="50"/>
+        <Edit id="edtEmail" taborder="31" left="621" top="120" width="140" height="20" readonly="true"/>
+        <Calendar id="calCan" taborder="32" left="785" top="266" width="150" height="20"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.objApp 	  = this.gfn_getApplication();
+
+this.AsReq_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	//var arrArg = this.parent.parent.parent.arguments.arrArg[0];
+
+	if(!this.parent.parent.parent.arguments){
+		trace("undefined");
+	}else{
+		trace(this.parent.parent.parent.arguments.arrArg[0]);
+		
+		var strId = "svcAsreq";
+		var strUrl = "svc::asReq";
+		var inData = "";
+		var outData	= "ds_istReq=out_istReq, resultMessage=resultMessage";
+		var param = "receptionNum="+this.parent.parent.parent.arguments.arrArg[0];
+		var callBack = "fn_callback";
+		this.transaction(strId, strUrl, inData, outData, param, callBack);
+	}
+	
+	var strId    = "svcAsEng";
+	var strUrl   = "svc::userAs";
+	var inData   = "";
+	var outData  = "ds_asEng=out_asEng";
+	var param   = "authorityId=ASENG";
+	var callBack = "";
+	this.transaction(strId, strUrl, inData, outData, param, callBack);
+	
+	var strId    = "svcComboGroup";
+	var strUrl   = "svc::comboGroup";
+	var inData   = "";
+	var outData  = "ds_sta=out_combo";
+	var param   = "comboGroup=STATE";
+	var callBack = "fn_callbackCombo";
+	this.transaction(strId, strUrl, inData, outData, param, callBack);
+};
+
+this.fn_callbackCombo = function ()
+{
+	this.ds_sta.set_enableevent(false);
+	
+	// comboCode의 값이 'AS'로 시작하는 조건으로 필터 설정
+	this.ds_sta.filter("comboCode.indexOf('AS') == 0");
+	
+	this.ds_sta.set_enableevent(true);
+};
+
+this.fn_callback = function ()
+{
+	if(this.objApp.resultMessage == 'SUCCESS'){
+		trace("가능?");
+	}else{
+		this.edtReception.set_value(this.ds_istReq.getColumn(0,"receptionNum"));
+		this.calIst.set_value(this.ds_istReq.getColumn(0,"istReqDate"));
+		this.edtCname.set_value(this.ds_istReq.getColumn(0,"clientName"));
+		this.edtType.set_value(this.ds_istReq.getColumn(0,"istReqType"));
+		this.edtCphone.set_value(this.ds_istReq.getColumn(0,"clientPhone"));
+		this.edtEmail.set_value(this.ds_istReq.getColumn(0,"clientEmail"));
+		this.edtCar.set_value(this.ds_istReq.getColumn(0,"istReqCar")+this.ds_istReq.getColumn(0,"istReqCarName")+"/"+this.ds_istReq.getColumn(0,"istReqVehiNum")+"대");
+		this.edtCharge.set_value(this.ds_istReq.getColumn(0,"istReqCharge"));
+	}
+};
+
+this.fn_validateComp = function (comp)
+{
+	var childComp;
+
+    // 부모 컴포넌트 (폼 또는 Div) 안의 모든 컴포넌트 순회
+	//trace("컴포넌트"+comp.length);
+    for (var i = 0; i < comp.length; i++) {
+        childComp = comp[i];
+		//trace(childComp.name);
+        // Edit 컴포넌트에 대한 처리
+        if (childComp instanceof Edit) {
+            if (childComp.value == undefined || childComp.value == "") {
+				if(childComp.name == "edtCan"){
+					if(this.cmbSta.value == "ASREQCAN"){
+						this.alert(childComp.name + " 값이 비어있습니다.");
+						return false;
+					}
+				}
+				this.alert(childComp.name + " 값이 비어있습니다.");
+				return false;
+            }
+        }
+
+        // Combo 컴포넌트에 대한 처리
+        else if (childComp instanceof Combo) {
+            if (childComp.value == "init" || childComp.index == 0) {
+				this.alert(childComp.name + " 값이 비어있습니다.");
+				return false;	
+            }
+        }
+		
+		// Spin 컴포넌트에 대한 처리
+        else if (childComp instanceof Spin) {
+            if (childComp.value == null || childComp.value == "") {
+				this.alert(childComp.name + " 값이 비어있습니다.");
+				return false;	
+            }
+        }
+		
+		// Calendar 컴포넌트에 대한 처리
+        else if (childComp instanceof Calendar) {
+            if (childComp.value == null || childComp.value == "") {
+                this.alert(childComp.name + " 값이 비어있습니다.");
+                return false;
+            }
+        }
+    }
+	
+	return true;
+};
+this.cmbSta_onitemchanged = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	if(this.cmbSta.value == "ASREQCAN"){
+		var today = new Date();
+		var year = today.getFullYear();
+		var month = ("0" + (today.getMonth() + 1)).slice(-2);  // 월은 0부터 시작하므로 1 더해줌
+		var day = ("0" + today.getDate()).slice(-2);
+		
+		this.calCan.set_value(year + month + day);
+	}
+};
+
+
+]]></Script>
+    <Objects>
+      <Dataset id="ds_istReq">
+        <ColumnInfo>
+          <Column id="receptionNum" type="STRING" size="256"/>
+          <Column id="istReqDate" type="STRING" size="256"/>
+          <Column id="clientName" type="STRING" size="256"/>
+          <Column id="istReqType" type="STRING" size="256"/>
+          <Column id="istReqCar" type="STRING" size="256"/>
+          <Column id="istReqCarName" type="STRING" size="256"/>
+          <Column id="istReqCharge" type="STRING" size="256"/>
+          <Column id="istReqVehiNum" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_sta">
+        <ColumnInfo>
+          <Column id="comboName" type="STRING" size="256"/>
+          <Column id="comboCode" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_year">
+        <ColumnInfo>
+          <Column id="comboName" type="STRING" size="256"/>
+          <Column id="comboCode" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="comboName">선택</Col>
+            <Col id="comboCode">init</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">2024</Col>
+            <Col id="comboCode">2024</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">2025</Col>
+            <Col id="comboCode">2025</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">2026</Col>
+            <Col id="comboCode">2026</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">2027</Col>
+            <Col id="comboCode">2027</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">2028</Col>
+            <Col id="comboCode">2028</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_month">
+        <ColumnInfo>
+          <Column id="comboName" type="STRING" size="256"/>
+          <Column id="comboCode" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="comboName">선택</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">1</Col>
+            <Col id="comboCode">01</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">2</Col>
+            <Col id="comboCode">02</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">3</Col>
+            <Col id="comboCode">03</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">4</Col>
+            <Col id="comboCode">04</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">5</Col>
+            <Col id="comboCode">05</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">6</Col>
+            <Col id="comboCode">06</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">7</Col>
+            <Col id="comboCode">07</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">8</Col>
+            <Col id="comboCode">08</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">9</Col>
+            <Col id="comboCode">09</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">10</Col>
+            <Col id="comboCode">10</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">11</Col>
+            <Col id="comboCode">11</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">12</Col>
+            <Col id="comboCode">12</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_day">
+        <ColumnInfo>
+          <Column id="comboName" type="STRING" size="256"/>
+          <Column id="comboCode" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="comboName">선택</Col>
+            <Col id="comboCode">init</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">1</Col>
+            <Col id="comboCode">01</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">2</Col>
+            <Col id="comboCode">02</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">3</Col>
+            <Col id="comboCode">03</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">4</Col>
+            <Col id="comboCode">04</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">5</Col>
+            <Col id="comboCode">05</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">6</Col>
+            <Col id="comboCode">06</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">7</Col>
+            <Col id="comboCode">07</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">8</Col>
+            <Col id="comboCode">08</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">9</Col>
+            <Col id="comboCode">09</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">10</Col>
+            <Col id="comboCode">10</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">11</Col>
+            <Col id="comboCode">11</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">12</Col>
+            <Col id="comboCode">12</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">13</Col>
+            <Col id="comboCode">13</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">14</Col>
+            <Col id="comboCode">14</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">15</Col>
+            <Col id="comboCode">15</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">16</Col>
+            <Col id="comboCode">16</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">17</Col>
+            <Col id="comboCode">17</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">18</Col>
+            <Col id="comboCode">18</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">19</Col>
+            <Col id="comboCode">19</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">20</Col>
+            <Col id="comboCode">20</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">21</Col>
+            <Col id="comboCode">21</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">22</Col>
+            <Col id="comboCode">22</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">23</Col>
+            <Col id="comboCode">23</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">24</Col>
+            <Col id="comboCode">24</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">25</Col>
+            <Col id="comboCode">25</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">26</Col>
+            <Col id="comboCode">26</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">27</Col>
+            <Col id="comboCode">27</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">28</Col>
+            <Col id="comboCode">28</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">29</Col>
+            <Col id="comboCode">29</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">30</Col>
+            <Col id="comboCode">30</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">31</Col>
+            <Col id="comboCode">31</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_time">
+        <ColumnInfo>
+          <Column id="comboName" type="STRING" size="256"/>
+          <Column id="comboCode" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="comboName">오전</Col>
+            <Col id="comboCode">AM</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">오후</Col>
+            <Col id="comboCode">PM</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_hour">
+        <ColumnInfo>
+          <Column id="comboName" type="STRING" size="256"/>
+          <Column id="comboCode" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="comboName">선택</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">1</Col>
+            <Col id="comboCode">1</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">2</Col>
+            <Col id="comboCode">2</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">3</Col>
+            <Col id="comboCode">3</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">4</Col>
+            <Col id="comboCode">4</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">5</Col>
+            <Col id="comboCode">5</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">6</Col>
+            <Col id="comboCode">6</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">7</Col>
+            <Col id="comboCode">7</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">8</Col>
+            <Col id="comboCode">8</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">9</Col>
+            <Col id="comboCode">9</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">10</Col>
+            <Col id="comboCode">10</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">11</Col>
+            <Col id="comboCode">11</Col>
+          </Row>
+          <Row>
+            <Col id="comboName">12</Col>
+            <Col id="comboCode">12</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_asEng">
+        <ColumnInfo>
+          <Column id="userName" type="STRING" size="256"/>
+          <Column id="userId" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

@@ -1,0 +1,2615 @@
+﻿
+        
+.nexainput.nexaleftalign
+{
+  text-align:left;
+}
+.nexainput.nexarightalign
+{
+  text-align:right;
+}
+.nexainput.nexacenteralign
+{
+  text-align:center;
+}
+
+.nexacontentsbox.nexaleftalign
+{
+  text-align:left;
+}
+.nexacontentsbox.nexarightalign
+{
+  text-align:right;
+}
+.nexacontentsbox.nexacenteralign
+{
+  text-align:center;
+}
+.celltreeline
+{
+  border : 1px dotted #999999;
+}
+.Edit, .MaskEdit, .TextArea, .EditControl, .MaskEditControl, .TextAreaControl
+{
+  cursor:text;
+}
+.Button .nexacontentsbox, .ButtonControl .nexacontentsbox
+{
+  text-align:center;
+}
+
+.FileDownload  .nexacontentsbox, .FileDownloadControl .nexacontentsbox
+{
+  text-align:center;
+}
+
+.IconTextControl .nexacontentsbox, .IconControl .nexacontentsbox
+{
+  text-align:center;
+}
+
+.DatePickerDayItemControl .nexacontentsbox, .DatePickerWeekItemControl .nexacontentsbox, .DatepickerYearItemControl .nexacontentsbox, .TitleBarButtonControl .nexacontentsbox
+{
+  text-align:center;
+}
+
+.MainFrame, .VScrollBarControl, .HScrollBarControl
+{
+  cursor:default;
+}
+
+.Sketch .nexacontentsbox
+{
+   text-align:center;
+}
+
+.nexainput
+{
+  cursor:inherit;
+}
+
+.Form
+{
+	background : #ffffff;
+	color : #262626;
+	font : 13px "Verdana","Malgun Gothic";
+}
+.MainFrame
+{
+	border : 1px solid #23273c;
+	background : #ffffff;
+}
+.ChildFrame
+{
+	background : #ffffff;
+}
+.FrameSet
+{
+	background : #ffffff;
+}
+.HFrameSet
+{
+	background : #ffffff;
+}
+.TileFrameSet
+{
+	background : #ffffff;
+}
+.VFrameSet
+{
+	background : #ffffff;
+}
+.VScrollBarControl
+{
+	background : #eaebec;
+	border : 0px none,0px none,0px none,1px solid #b3b5b8;
+}
+.VScrollBarControl .trackbar
+{
+	background : #c6c7c9;
+}
+.HScrollBarControl
+{
+	border : 1px solid #b3b5b8,0px none,0px none;
+	background : #eaebec;
+}
+.HScrollBarControl .trackbar
+{
+	background : #c6c7c9;
+}
+.TitleBarControl
+{
+	background : #0b1742;
+	color : #ffffff;
+	font : bold 14px "Verdana";
+}
+.TitleBarControl .minbutton .nexacontentsbox
+{
+	vertical-align : bottom;
+}
+.StatusBarControl
+{
+	border : 1px solid #b3b5b8,0px none,0px none;
+	background : #d8d9da;
+	color : #262626;
+	font : 14px "Verdana";
+}
+.StatusBarControl .progressbar
+{
+	border : 1px solid #c4c4c4;
+	background : #ffffff;
+}
+.StatusBarControl .progressbar .progressbaritem
+{
+	background : #e9eaf1;
+}
+.StatusBarControl .resizegrip .nexacontentsbox
+{
+	vertical-align : bottom;
+}
+.Static.sta_WF_GTitle
+{
+	border : 1px solid #c2c7e1;
+	background : #ebecf5;
+	font : 12px "Verdana";
+	color : #0b1742;
+}
+.Static.sta_WF_GTitle .nexacontentsbox
+{
+	text-align : center;
+}
+.Static.sta_WF_GLabel
+{
+	border : 1px solid #c2c7e1;
+	background : #f5f6fa;
+	font : 12px "Verdana";
+	color : #0b1742;
+}
+.Static.sta_WF_GLabel .nexacontentsbox
+{
+	text-align : center;
+}
+.Static.sta_WF_GArea
+{
+	border : 1px solid #c2c7e1;
+	background : #ffffff;
+}
+.Static.sta_WF_GLineV
+{
+	-nexa-edge : URL('./images/sta_WF_GLineV.png') 5px 2px;
+}
+.Static.sta_WF_GLineH
+{
+	-nexa-edge : URL('./images/sta_WF_GLineH.png') 5px 2px;
+}
+.Static.sta_WF_GTxt
+{
+	font : 12px "Verdana";
+	color : #0f4e8c;
+}
+.Static.sta_WF_GStatus
+{
+	font : 11px "Verdana";
+	color : #746f6f;
+}
+.Static.sta_WF_GSize
+{
+	background : #ff0000;
+	color : #000000;
+	font : bold 12px "Dotum";
+	opacity : 0.3;
+}
+.Static.sta_WF_GSize .nexacontentsbox
+{
+	text-align : center;
+}
+.Static.sta_WF_guideRed
+{
+	background : RGBA(255,0,0,0.20);
+	color : red;
+	font : 12px "Verdana", "Malgun Gothic";
+}
+.Static.sta_WF_guideRed .nexacontentsbox
+{
+	text-align : center;
+}
+.Static.sta_WF_guideBlue
+{
+	background : RGBA(69,115,205,0.20);
+	color : blue;
+	font : 12px "Verdana", "Malgun Gothic";
+}
+.Static.sta_WF_guideBlue .nexacontentsbox
+{
+	text-align : center;
+}
+.Static .nexacontentsbox
+{
+	-nexa-word-wrap : char;
+}
+.Edit
+{
+	border : 1px solid #c4c4c4;
+	padding : 0px 10px;
+	background : #ffffff;
+}
+.Edit.edt_WF_Essential
+{
+	background : URL("./images/icon_Essential.png") no-repeat left top #ffffff;
+}
+.Edit.edt_Login_id
+{
+	border : 1px solid #cccccc;
+	padding : 0px 0px 0px 40px;
+	background : URL("./images/edt_Login_idN.png") no-repeat left center #ffffff;
+	font : 16px "Malgun Gothic","Verdana";
+	letter-spacing : 1px;
+}
+.Edit.edt_Login_pw
+{
+	border : 1px solid #cccccc;
+	padding : 0px 0px 0px 40px;
+	background : URL("./images/edt_Login_pwN.png") no-repeat left center #ffffff;
+	font : 16px "Malgun Gothic","Verdana";
+	letter-spacing : 1px;
+}
+.MaskEdit
+{
+	border : 1px solid #c4c4c4;
+	padding : 0px 10px;
+	background : #ffffff;
+}
+.MaskEdit.msk_WF_Essential
+{
+	background : URL("./images/icon_Essential.png") no-repeat left top #ffffff;
+}
+.TextArea
+{
+	border : 1px solid #c4c4c4;
+	padding : 10px 10px 0px;
+	background : #ffffff;
+	font : 14px/24px "Verdana","MalgunGothic";
+}
+.TextArea .nexacontentsbox
+{
+	-nexa-word-wrap : char;
+}
+.TextArea .nexatextarea
+{
+	-nexa-word-wrap : char;
+}
+.TextArea.txt_WF_Essential
+{
+	background : URL("./images/icon_Essential.png") no-repeat left top #ffffff;
+}
+.Button
+{
+	border : 1px solid #c4c4c4;
+	background : linear-gradient(#ffffff 0%,#eaebec 100%);
+	cursor : pointer;
+}
+.Button.btn_Login
+{
+	border : 0px none, 1px solid #2b86bb, 1px solid #2b8cc4, 0px none;
+	background : linear-gradient(to bottom, #51b3ea,#319ddc);
+	color : #ffffff;
+	font : bold 16px "Malgun Gothic","Verdana";
+	letter-spacing : -1px;
+}
+.Spin
+{
+	border : 1px solid #c4c4c4;
+	background : #ffffff;
+}
+.Spin .spinedit
+{
+	padding : 0px 10px;
+}
+.Spin .spinedit .nexainput
+{
+	text-align : left;
+}
+.Spin .spinedit .nexacontentsbox
+{
+	text-align : left;
+}
+.Spin.spn_WF_Essential
+{
+	background : URL("./images/icon_Essential.png") no-repeat left top #ffffff;
+}
+.ListBox
+{
+	border : 1px solid #c4c4c4;
+	background : #ffffff;
+}
+.ListBoxControl
+{
+	border : 1px solid #c4c4c4;
+	background : #ffffff;
+}
+.Combo
+{
+	border : 1px solid #c4c4c4;
+	background : #ffffff;
+}
+.Combo .comboedit
+{
+	padding : 0px 0px 0px 10px;
+}
+.Combo.cbo_WF_Essential
+{
+	background : URL("./images/icon_Essential.png") no-repeat left top #ffffff;
+}
+.Calendar
+{
+	border : 1px solid #c4c4c4;
+	background : #ffffff;
+}
+.Calendar .calendaredit
+{
+	padding : 0px 0px 0px 10px;
+}
+.Calendar.cal_WF_Essential
+{
+	background : URL("./images/icon_Essential.png") no-repeat left top #ffffff;
+}
+.Calendar .calendarspindownbutton
+{
+	border : 1px solid #c4c4c4,0px none,0px none,1px solid #919396;
+}
+.Calendar .calendarspinupbutton
+{
+	border : 0px none,0px none,0px none,1px solid #919396;
+}
+.DatePickerControl
+{
+	border : 1px solid #c4c4c4;
+	background : #ffffff;
+}
+.DatePickerControl .head
+{
+	background : #143a84;
+}
+.DatePickerControl .head .monthstatic
+{
+	color : #ffffff;
+	font : 14px "Verdana";
+}
+.DatePickerControl .head .yearstatic
+{
+	color : #ffffff;
+	font : 14px "Verdana";
+}
+.DatePickerControl .head .yearspin .spinedit
+{
+	color : #ffffff;
+	font : 12px "Verdana";
+}
+.DatePickerControl .head .monthspin .spinedit
+{
+	color : #ffffff;
+	font : 12px "Verdana";
+}
+.DatePickerControl .body .weekband
+{
+	background : #d8d9da;
+}
+.Tab .tabbuttonitemTab
+{
+	border : 1px solid #c4c4c4;
+	background : #eaebec;
+}
+.Tab .tabpageTab
+{
+	border : 1px solid #c4c4c4;
+	background : #ffffff;
+}
+.Tab.tab_MDI_Tab .tabpageTab.tabpageTabtab_MDI_Tab
+{
+	border : 0px none;
+	background : #ffffff;
+}
+.Tab .nextbuttonTab
+{
+	border : 1px solid #c4c4c4;
+	background : #ffffff;
+}
+.Tab .prevbuttonTab
+{
+	border : 1px solid #c4c4c4;
+	background : #ffffff;
+}
+.GroupBox .groupboxcontents
+{
+	border : 1px solid #c4c4c4;
+	background : #ffffff;
+}
+.GroupBox .groupboxtitle
+{
+	background : #ffffff;
+}
+.ProgressBar
+{
+	border : 1px solid #c4c4c4;
+	background : #ffffff;
+}
+.ProgressBar .progressbaritem
+{
+	background : #00b1eb;
+}
+.Menu
+{
+	background : #eaebec;
+}
+.PopupMenu
+{
+	border : 1px solid #c4c4c4;
+	background : #ffffff;
+}
+.PopupMenuControl
+{
+	border : 1px solid #c4c4c4;
+	background : #ffffff;
+}
+.PopupMenu .popupmenuitem .popupmenuitemhotkeytext
+{
+	font : 10px "Verdana";
+	color : #919396;
+}
+.PopupMenuControl .popupmenuitem .popupmenuitemhotkeytext
+{
+	font : 10px "Verdana";
+	color : #919396;
+}
+.Grid
+{
+	border : 1px solid #dddddd;
+	background : #ffffff;
+}
+.Grid .head .row .cell
+{
+	border : 1px solid #dddddd,1px solid #dddddd,1px solid #dadada;
+	font : bold 12px "Verdana,Malgun Gothic";
+	color : #000000;
+	letter-spacing : -1px;
+	background : #f5f8ff;
+}
+.Grid .head .row .cell .nexacontentsbox
+{
+	text-align : center;
+}
+.Grid .body .row .cell
+{
+	background : #ffffff;
+	border : 1px solid #dddddd;
+	font : 12px "Verdana,Malgun Gothic";
+	color : #262626;
+}
+.Grid .body .selection
+{
+	border : 2px solid #00b1eb;
+}
+.Grid .head .row .cell .subcell
+{
+	border : 1px solid #dddddd;
+}
+.Grid .head .row .cell .subcell .nexacontentsbox
+{
+	text-align : center;
+}
+.Grid .summary .row .cell
+{
+	background : #f3f5f6;
+	border : 1px solid #dddddd;
+}
+.Grid .summary .row .cell .nexacontentsbox
+{
+	text-align : center;
+}
+.GridCellControl .cellbutton
+{
+	border : 1px solid #c4c4c4;
+	background : linear-gradient(#ffffff 0%,#d9d9d9 100%);
+	cursor : pointer;
+}
+.GridCellControl .cellcalendar
+{
+	border : 0px none;
+	background : transparent;
+}
+.GridCellControl .cellcalendar .calendaredit
+{
+	padding : 0px 0px 0px 8px;
+}
+.GridCellControl .cellcalendar .calendaredit .nexainput
+{
+	text-align : center;
+}
+.GridCellControl .cellcalendar .calendaredit .nexacontentsbox
+{
+	text-align : center;
+}
+.GridCellControl .cellcombo
+{
+	border : 0px none;
+	background : transparent;
+}
+.GridCellControl .cellcombo .comboedit
+{
+	padding : 0px 0px 0px 8px;
+}
+.GridCellControl .celledit
+{
+	border : 1px solid #c4c4c4;
+	padding : 0px 8px;
+	background : #ffffff;
+}
+.GridCellControl .cellmaskedit
+{
+	border : 1px solid #c4c4c4;
+	padding : 0px 8px;
+	background : #ffffff;
+}
+.GridCellControl .celltextarea
+{
+	border : 1px solid #c4c4c4;
+	padding : 8px 8px 0px;
+	background : #ffffff;
+	font : 13px/20px "Verdana", "Malgun Gothic";
+}
+.GridCellControl .celltextarea .nexacontentsbox
+{
+	-nexa-word-wrap : char;
+}
+.GridCellControl .celltextarea .nexatextarea
+{
+	-nexa-word-wrap : char;
+}
+.GridCellControl .cellprogressbar
+{
+	border : 1px solid #c4c4c4;
+	background : #ffffff;
+}
+.GridCellControl .cellprogressbar .progressbaritem
+{
+	background : #08497f;
+}
+.GridCellControl .cellprogressbar .progressbartext .nexacontentsbox
+{
+	text-align : right;
+}
+.FileDownload
+{
+	border : 1px solid #c4c4c4;
+	background : linear-gradient(#ffffff 0%,#eaebec 100%);
+}
+.FileUpload
+{
+	border : 1px solid #eaebec;
+	background : #ffffff;
+}
+.FileUpload .fileuploaditem .fileuploaditemedit
+{
+	border : 1px solid #c4c4c4;
+	background : #ffffff;
+}
+.FileUpload .fileuploaditem .fileuploaditembutton
+{
+	border : 1px solid #c4c4c4;
+	background : linear-gradient(#ffffff 0%,#eaebec 100%);
+}
+.Static.sta_TF_Logo
+{
+	background : url('./images/img_logo.png') no-repeat center center /100% transparent;
+}
+.Static.sta_TF_bg
+{
+	background : #0F4E8C;
+}
+.Static.sta_TF_Text1
+{
+	color : #fcfa6d;
+	font : bold 12px "Malgun Gothic","Verdana";
+}
+.Static.sta_TF_Text2
+{
+	color : #ffffff;
+	font : 12px "Malgun Gothic","Verdana";
+}
+.Button.btn_TF_menu
+{
+	border : 0px none;
+	background : URL("./images/btn_TF_MenuLine.png") no-repeat left center transparent;
+	color : #ffffff;
+	font : bold 15px "Malgun Gothic","Verdana";
+}
+.Button.btn_TF_menu_s
+{
+	border : 0px none;
+	background : URL("./images/btn_TF_MenuLine.png") no-repeat left center transparent;
+	color : #ffc26b;
+	font : bold 15px "Malgun Gothic","Verdana";
+}
+.Button.btn_TF_Logout
+{
+	border : 0px none;
+	background : #111111;
+	color : #b8b8b8;
+	font : 11px "Malgun Gothic","Verdana";
+}
+.Button.btn_LF_Home
+{
+	border : 0px none;
+	background : transparent;
+}
+.Button.btn_LF_Menu
+{
+	border : 0px none;
+	background : #d3d3d3;
+	color : #ffffff;
+}
+.Grid.grd_LF_Menu
+{
+	border : 0px none;
+	background : #ffffff;
+}
+.Grid.grd_LF_Menu .body .row .cell
+{
+	background : transparent;
+	border : 0px none;
+	color : #262626;
+}
+.Grid.grd_LF_Menu .body .row .cell.cell_LF_Level1
+{
+	color : #b9c4da;
+}
+.Button.btn_MDI_Max
+{
+	border : 0px none;
+	background : transparent;
+}
+.Button.btn_MDI_Min
+{
+	border : 0px none;
+	background : transparent;
+}
+.Button.btn_MDI_Verti
+{
+	border : 0px none;
+	background : transparent;
+}
+.Button.btn_MDI_Horz
+{
+	border : 0px none;
+	background : transparent;
+}
+.Button.btn_MDI_AllX
+{
+	border : 0px none;
+	background : transparent;
+}
+.Tab.tab_MDI_Tab .tabbuttonitemTab.tabbuttonitemTabtab_MDI_Tab
+{
+	border : 1px solid #d3d3d3;
+	background : #d3d3d3;
+	color : #ffffff;
+}
+.Static.sta_MDI_AreaBg
+{
+	border : 0px none,0px none,1px solid #717275;
+	background : #ffffff;
+}
+.Static.sta_WF_FrmTitle
+{
+	font : bold 16px "Verdana","Malgun Gothic";
+}
+.Static.sta_WF_TitleMain
+{
+	font : bold 16px "Verdana","Malgun Gothic";
+}
+.Static.sta_WF_TitleSub1
+{
+	font : bold 14px "Verdana","Malgun Gothic";
+}
+.Static.sta_WF_TitleSub2
+{
+	font : bold 12px "Verdana","Malgun Gothic";
+}
+.Button.btn_WF_CRUD
+{
+	border : 1px solid #6f748a;
+	background : #6f748a;
+	color : #ffffff;
+}
+.Button.btn_WF_POP_OK
+{
+	border : 1px solid #2563de;
+	background : #2563de;
+	color : #ffffff;
+}
+.Div.div_WF_Detail
+{
+	border : 1px solid #d3dce1;
+	background : #f5f8ff;
+}
+.Div.div_WF_Search
+{
+	border : 1px solid #d3dce1;
+	background : #F7F7F7;
+}
+.Div.div_WF_Area
+{
+	border : 1px solid #d3dce1;
+	background : #ffffff;
+}
+.Div.div_LF_Area
+{
+	border : 1px solid #5692C2;
+}
+.PopupDiv.pdiv_WF_Area
+{
+	border : 1px solid #c4c4c4;
+	background : #ffffff;
+}
+.Static.sta_WF_LabelTxt
+{
+	color : #262626;
+	font : bold 14px "Verdana", "Malgun Gothic";
+}
+.Button.btn_WF_Find
+{
+	border : 0px none;
+	background : #3d8dd2;
+}
+.Button.btn_WF_PopSearch
+{
+	border : 0px none;
+	background : url('./images/icon_search.png') no-repeat center center /contain;
+}
+.Static.sta_WF_DetailEssential
+{
+	font : bold 12px "Verdana","Malgun Gothic";
+	letter-spacing : -1px;
+	border : 1px solid #d3dce1;
+	color : #262626;
+	background : url('./images/sta_WF_DetailEssIcon.png') no-repeat left top #f3f5f6;
+}
+.Static.sta_WF_DetailLabeltext
+{
+	font : bold 13px "Verdana","Malgun Gothic";
+	letter-spacing : -1px;
+	color : #0F4E8C;
+}
+.Static.sta_WF_DetailLabeltext .nexacontentsbox
+{
+	text-align : right;
+}
+.Static.sta_WF_DetailLabel
+{
+	font : bold 12px "Verdana", "Malgun Gothic";
+	letter-spacing : -1px;
+}
+.Static.sta_WF_DetailLabel .nexacontentsbox
+{
+	text-align : right;
+}
+.Static.sta_WF_DetailArea
+{
+	border : 1px solid #d3dce1;
+	background : #ffffff;
+}
+.Static.sta_WF_TitleSub
+{
+	color : #262626;
+	font : bold 14px "Verdana","Malgun Gothic";
+}
+.Static.sta_WF_TitleSub .nexacontentsbox
+{
+	vertical-align : bottom;
+}
+.Static.sta_WF_TypeTitle
+{
+	background : url('./images/sta_WF_DotIcon.png') no-repeat left center /auto;
+	color : #262626;
+	font : bold 14px "Verdana","Malgun Gothic";
+}
+.Static.sta_WF_SearchLabel
+{
+	font : bold 12px "Verdana", "Malgun Gothic";
+	letter-spacing : -1px;
+}
+.Static.sta_WF_SearchLabel .nexacontentsbox
+{
+	text-align : right;
+}
+.Grid .body .row .cell.cell_WF_Noline
+{
+	border : 0px none , 0px none , 1px solid #cbcbcb , 0px none;
+}
+.ListView
+{
+	border : 1px solid #c4c4c4;
+	background : #ffffff;
+}
+.ListView .body
+{
+	border : 0px none,0px none,1px solid #d8d9da;
+	background : #ffffff;
+}
+.ListView .body.lstv_WF_BdyFormat1
+{
+	border : 1px solid #ffffff,1px solid #ffffff,1px solid #d8d9da,1px solid #ffffff;
+}
+.ListView .body.lstv_WF_BdyFormat2
+{
+	border : 1px solid #ffffff;
+}
+.ListView .body .cell.lstv_WF_BdyCName
+{
+	font : bold 16px "Verdana","Malgun Gothic";
+}
+.ListView .body .cell.lstv_WF_BdyCName .nexacontentsbox
+{
+	text-align : center;
+}
+.ListView .body .cell.lstv_WF_BdyCId
+{
+	font : bold 14px "Verdana","Malgun Gothic";
+}
+.ListView .body .cell.lstv_WF_BdyCId .nexacontentsbox
+{
+	text-align : center;
+}
+.ListView .body .cell.lstv_WF_BdyCGender
+{
+	font : 14px "Verdana","Malgun Gothic";
+}
+.ListView .body .cell.lstv_WF_BdyCGender .nexacontentsbox
+{
+	text-align : center;
+}
+.ListView .body .cell.lstv_WF_BdyCLabel
+{
+	font : bold 14px "Malgun Gothic";
+}
+.ListView .body .cell.lstv_WF_BdyCValue
+{
+	font : 14px "Malgun Gothic";
+}
+.ListView .body .cell.lstv_WF_BdyCValue .nexacontentsbox
+{
+	text-align : left;
+}
+.ListView .detail
+{
+	border : 0px none,0px none,1px solid #d8d9da;
+	background : #ffffff;
+}
+.ListViewDetailBandControl.popupListViewdetail.dummy
+{
+	border : 0px none,0px none,1px solid #d8d9da;
+	background : #ffffff;
+}
+.ListView .detail .cell.lstv_WF_DtailCLabel
+{
+	font : bold 14px "Verdana","Malgun Gothic";
+}
+.ListViewDetailBandControl.popupListViewdetail.dummy .cell.lstv_WF_DtailCLabel
+{
+	font : bold 14px "Verdana","Malgun Gothic";
+}
+.ListView .detail .cell.lstv_WF_DtailCValue
+{
+	font : 14px "Verdana","Malgun Gothic";
+}
+.ListViewDetailBandControl.popupListViewdetail.dummy .cell.lstv_WF_DtailCValue
+{
+	font : 14px "Verdana","Malgun Gothic";
+}
+.ListView .detail .cell.lstv_WF_DtailCValue .nexacontentsbox
+{
+	text-align : left;
+}
+.ListViewDetailBandControl.popupListViewdetail.dummy .cell.lstv_WF_DtailCValue .nexacontentsbox
+{
+	text-align : left;
+}
+.ListViewBandControl
+{
+	border : 0px none,1px solid #d8d9da,1px solid #d8d9da;
+	background : #f4f5f5;
+}
+.ListViewCellControl .cellbutton
+{
+	border : 1px solid #c4c4c4;
+	background : linear-gradient(#ffffff 0%,#eaebec 100%);
+	cursor : pointer;
+}
+.ListViewCellControl .cellcalendar
+{
+	border : 1px solid #c4c4c4;
+	background : #ffffff;
+}
+.ListViewCellControl .cellcalendar .calendaredit
+{
+	padding : 0px 0px 0px 10px;
+}
+.ListViewCellControl .cellcombo
+{
+	border : 1px solid #c4c4c4;
+	background : #ffffff;
+}
+.ListViewCellControl .cellcombo .comboedit
+{
+	padding : 0px 0px 0px 10px;
+}
+.ListViewCellControl .celledit
+{
+	border : 1px solid #c4c4c4;
+	padding : 0px 10px;
+	background : #ffffff;
+}
+.ListViewCellControl .cellmaskedit
+{
+	border : 1px solid #c4c4c4;
+	padding : 0px 10px;
+	background : #ffffff;
+}
+.ListViewCellControl .celltextarea
+{
+	border : 1px solid #c4c4c4;
+	padding : 10px 10px 0px;
+	background : #ffffff;
+	font : 14px/24px "Verdana","MalgunGothic";
+}
+.ListViewCellControl .celltextarea .nexacontentsbox
+{
+	-nexa-word-wrap : char;
+}
+.ListViewCellControl .celltextarea .nexatextarea
+{
+	-nexa-word-wrap : char;
+}
+.ListViewCellControl .cellprogressbar
+{
+	border : 1px solid #c4c4c4;
+	background : #ffffff;
+}
+.ListViewCellControl .cellprogressbar .progressbaritem
+{
+	background : #a1b0ce;
+}
+.ListViewCellControl .cellprogressbar .progressbartext .nexacontentsbox
+{
+	text-align : right;
+}
+.Button.btn_WF_RtlLogout
+{
+	font : bold 28px "Malgun Gothic";
+}
+.Button.btn_WF_RtlLogout .nexacontentsbox
+{
+	text-align : left;
+}
+.Static.sta_WF_Contents
+{
+	font : 14px/22px "Verdana","Malgun Gothic";
+}
+.Static.sta_WF_ArrContents
+{
+	font : 15px/22px "Malgun Gothic";
+}
+.Button.btn_WF_Status
+{
+	border : 1px solid #c4c4c4;
+	background : #fbfbfb;
+}
+.Form.frm_WF_MainBg
+{
+	background : #f4f6fd;
+}
+.Static.sta_WF_MainImg
+{
+	background : url('./images/sta_WF_MainImg.png') no-repeat center center;
+}
+.Static.sta_WF_MainBoard
+{
+	background : #ffffff;
+	border-radius : 15px;
+	box-shadow : 4px 4px 5px 0px #d4d7e1;
+	font : bold 18px "Verdana,Malgun Gothic";
+}
+.Static.sta_WF_MainBoard .nexacontentsbox
+{
+	vertical-align : top;
+}
+.Grid.grd_WF_Board
+{
+	border : 0px none;
+	background : transparent;
+}
+.Grid.grd_WF_Board .body .row .cell
+{
+	background : transparent;
+	border : 0px none;
+	font : 13px "Verdana,Malgun Gothic";
+}
+.Grid.grd_WF_Board .body .row .cell.oddcell
+{
+	background : transparent;
+}
+.Grid.grd_WF_Board .body .row .cell .celltextarea
+{
+	border : 0px none;
+	background : transparent;
+	font : 13px/19px "Verdana,Malgun Gothic";
+}
+.Grid.grd_WF_Board .body .row .cell .celltextarea .nexacontentsbox
+{
+	-nexa-word-wrap : char;
+}
+.Grid.grd_WF_Board .body .row .cell .celltextarea .nexatextarea
+{
+	-nexa-word-wrap : char;
+}
+.View
+{
+	border : 1px solid #c4c4c4;
+	background : #ffffff;
+}
+.View.View_WF_Area
+{
+	border : 0px none;
+}
+.Button.btn_WF_calMonthNext
+{
+	background : transparent;
+	border : 0px none;
+	cursor : pointer;
+}
+.Button.btn_WF_calMonthPrev
+{
+	background : transparent;
+	border : 0px none;
+	cursor : pointer;
+}
+.Button.btn_WF_FrmMain
+{
+	border : 0px none, 1px solid #145ea0, 1px solid #1461a6, 0px none;
+	background : linear-gradient(to bottom, #3d8dd2,#176ebb);
+	color : #ffffff;
+	font : normal 700 13px/normal "Verdana,Malgun Gothic";
+}
+.Button.btn_WF_FrmSub
+{
+	border : 0px none, 1px solid #2b86bb, 1px solid #2b8cc4, 0px none;
+	background : linear-gradient(to bottom, #51b3ea,#319ddc);
+	color : #ffffff;
+}
+.Static.sta_WF_ErrMsg
+{
+	color : #ED1C24;
+	font : 12px "Malgun Gothic","Verdana";
+	letter-spacing : 1px;
+}
+.Button.btn_POP_Btn
+{
+	border : 0px none, 1px solid #405475, 1px solid #4b638a, 0px none;
+	background : linear-gradient(to bottom, #6379a1,#4b638a);
+	color : #ffffff;
+}
+.Button.btn_POP_Cancel
+{
+	border : 1px solid #cccccc, 1px solid #a1a1a1, 1px solid #999999, 1px solid #cccccc;
+	background : linear-gradient(to bottom, #ffffff,#f5f5f5);
+	color : #333333;
+}
+.Button.btn_WF_Detail
+{
+	border : 1px solid #5f7086;
+	background : #718093;
+	color : #ffffff;
+}
+.Static.sta_WF_msg_bg
+{
+	border : 2px solid #0a2a70;
+	background : #ffffff;
+}
+.Static.sta_WF_msg_line
+{
+	background : #e5e5e5;
+}
+.Static.sta_WF_msg_alert
+{
+	background : URL("./images/sta_WF_Msg_Alert.png") no-repeat;
+}
+.Static.sta_WF_msg_confirm
+{
+	background : URL("./images/sta_WF_Msg_Confirm.png") no-repeat;
+}
+.Static.sta_POP_Title
+{
+	background : #42556b;
+	font : bold 14px "Malgun Gothic","Verdana";
+	color : #ffffff;
+}
+.Button.btn_POP_Close
+{
+	border : 0px none;
+	background : URL("./images/btn_POP_Close.png") no-repeat center center transparent;
+}
+.Grid.grd_mCombo
+{
+	border : 0px none;
+	background : #ffffff;
+}
+.Grid.grd_mCombo .body
+{
+	border : 0px none;
+	border-radius : 0px;
+}
+.Grid.grd_mCombo .head .row .cell
+{
+	border : 1px solid #ffffff,0px none,2px solid #dddddd;
+	background : #ffffff;
+	color : #ea6214;
+}
+.Grid.grd_mCombo .head .row .cell.oddcell
+{
+	background : #ffffff;
+}
+.Grid.grd_mCombo .head .row .cell .nexacontentsbox
+{
+	text-align : left;
+}
+.Grid.grd_mCombo .body .row .cell
+{
+	border : 1px solid #ffffff,0px none,1px solid #dddddd;
+	background : #ffffff;
+}
+.Grid.grd_mCombo .body .row .cell.oddcell
+{
+	background : #ffffff;
+}
+.Button.btn_WF_boomark
+{
+	border : 0px none;
+	background : transparent;
+}
+.Button.btn_WF_boomark_S
+{
+	border : 0px none;
+	background : transparent;
+}
+.Static.sta_BF_LodingTxt
+{
+	color : #fcfa6d;
+	font : bold 12px "Malgun Gothic";
+}
+.Static.sta_BF_LodingTxt .nexacontentsbox
+{
+	text-align : right;
+}
+.VScrollBarControl .trackbar[status=mouseover]
+{
+	background : #d8d9da;
+}
+.HScrollBarControl .trackbar[status=mouseover]
+{
+	background : #d8d9da;
+}
+.TitleBarControl .minbutton[status=mouseover]
+{
+	background : #595f62;
+}
+.TitleBarControl .maxbutton[status=mouseover]
+{
+	background : #595f62;
+}
+.TitleBarControl .normalbutton[status=mouseover]
+{
+	background : #595f62;
+}
+.TitleBarControl .closebutton[status=mouseover]
+{
+	background : #595f62;
+}
+.Edit[status=mouseover]
+{
+	border : 1px solid #000000;
+}
+.Edit[status=focused]
+{
+	border : 1px solid #000000;
+}
+.Edit[status=readonly]
+{
+	border : 1px solid #c4c4c4;
+	background : #eaebec;
+}
+.Edit.edt_WF_Essential[status=focused]
+{
+	border : 1px solid #ff9126;
+}
+.Edit.edt_WF_Essential[status=mouseover]
+{
+	border : 1px solid #ff9126;
+}
+.Edit.edt_Login_id[status=focused]
+{
+	border : 1px solid #0a7ce1;
+	padding : 0px 0px 0px 40px;
+	background : URL("./images/edt_Login_idS.png") no-repeat left center #ffffff;
+	color : #0a7ce1;
+	font : 16px "Malgun Gothic","Verdana";
+}
+.Edit.edt_Login_id[status=mouseover]
+{
+	border : 1px solid #0a7ce1;
+	padding : 0px 0px 0px 40px;
+	background : URL("./images/edt_Login_idS.png") no-repeat left center #ffffff;
+	color : #0a7ce1;
+	font : 16px "Malgun Gothic","Verdana";
+}
+.Edit.edt_Login_pw[status=focused]
+{
+	border : 1px solid #0a7ce1;
+	padding : 0px 0px 0px 40px;
+	background : URL("./images/edt_Login_pwS.png") no-repeat left center #ffffff;
+	color : #0a7ce1;
+	font : 16px "Malgun Gothic","Verdana";
+}
+.Edit.edt_Login_pw[status=mouseover]
+{
+	border : 1px solid #0a7ce1;
+	padding : 0px 0px 0px 40px;
+	background : URL("./images/edt_Login_pwS.png") no-repeat left center #ffffff;
+	color : #0a7ce1;
+	font : 16px "Malgun Gothic","Verdana";
+}
+.MaskEdit[status=mouseover]
+{
+	border : 1px solid #000000;
+}
+.MaskEdit[status=focused]
+{
+	border : 1px solid #000000;
+}
+.MaskEdit[status=readonly]
+{
+	border : 1px solid #c4c4c4;
+	background : #eaebec;
+}
+.MaskEdit.msk_WF_Essential[status=focused]
+{
+	border : 1px solid #ff9126;
+}
+.MaskEdit.msk_WF_Essential[status=mouseover]
+{
+	border : 1px solid #ff9126;
+}
+.TextArea[status=mouseover]
+{
+	border : 1px solid #000000;
+}
+.TextArea[status=focused]
+{
+	border : 1px solid #000000;
+}
+.TextArea[status=readonly]
+{
+	border : 1px solid #c4c4c4;
+	background : #eaebec;
+}
+.TextArea.txt_WF_Essential[status=focused]
+{
+	border : 1px solid #ff9126;
+}
+.TextArea.txt_WF_Essential[status=mouseover]
+{
+	border : 1px solid #ff9126;
+}
+.Button[status=mouseover]
+{
+	border : 1px solid #000000;
+}
+.Button[status=focused]
+{
+	border : 1px solid #000000;
+}
+.Button.btn_Login[status=focused]
+{
+	border : 0px none, 1px solid #155a97, 1px solid #125d9f, 0px none;
+	background : linear-gradient(to bottom, #3e8dd3,#176ebb);
+	color : #ffffff;
+}
+.Button.btn_Login[status=mouseover]
+{
+	border : 0px none, 1px solid #155a97, 1px solid #125d9f, 0px none;
+	background : linear-gradient(to bottom, #3e8dd3,#176ebb);
+	color : #ffffff;
+}
+.Spin[status=mouseover]
+{
+	border : 1px solid #00b1eb;
+}
+.Spin[status=focused]
+{
+	border : 1px solid #00b1eb;
+}
+.Spin[status=readonly]
+{
+	border : 1px solid #c4c4c4;
+	background : #eaebec;
+}
+.Spin.spn_WF_Essential[status=focused]
+{
+	border : 1px solid #ff9126;
+}
+.Spin.spn_WF_Essential[status=mouseover]
+{
+	border : 1px solid #ff9126;
+}
+.ListBox .listboxitem[status=mouseover]
+{
+	color : #00b1eb;
+}
+.ListBoxControl .listboxitem[status=mouseover]
+{
+	color : #00b1eb;
+}
+.Combo[status=mouseover]
+{
+	border : 1px solid #00b1eb;
+}
+.Combo[status=focused]
+{
+	border : 1px solid #00b1eb;
+}
+.Combo[status=readonly]
+{
+	border : 1px solid #c4c4c4;
+	background : #eaebec;
+}
+.Combo.cbo_WF_Essential[status=focused]
+{
+	border : 1px solid #ff9126;
+}
+.Combo.cbo_WF_Essential[status=mouseover]
+{
+	border : 1px solid #ff9126;
+}
+.Calendar[status=mouseover]
+{
+	border : 1px solid #00b1eb;
+}
+.Calendar[status=focused]
+{
+	border : 1px solid #00b1eb;
+}
+.Calendar[status=readonly]
+{
+	border : 1px solid #c4c4c4;
+	background : #eaebec;
+}
+.Calendar.cal_WF_Essential[status=focused]
+{
+	border : 1px solid #ff9126;
+}
+.Calendar.cal_WF_Essential[status=mouseover]
+{
+	border : 1px solid #ff9126;
+}
+.DatePickerControl .body .dayitem[status=mouseover]
+{
+	background : #eaebec;
+}
+.Tab .tabbuttonitemTab[status=mouseover]
+{
+	border : 1px solid #c4c4c4;
+	background : #ffffff;
+	color : #00b1eb;
+}
+.Menu .menuitem[status=mouseover]
+{
+	background : #c6c7c9;
+}
+.PopupMenu .popupmenuitem[status=mouseover]
+{
+	color : #00b1eb;
+}
+.PopupMenuControl .popupmenuitem[status=mouseover]
+{
+	color : #00b1eb;
+}
+.Grid .body .row .cell[status=mouseover]
+{
+	background : #F2F2F2;
+}
+.GridCellControl .cellbutton[status=mouseover]
+{
+	border : 1px solid #000000;
+}
+.GridCellControl .cellbutton[status=focused]
+{
+	border : 1px solid #000000;
+}
+.GridCellControl .cellcalendar[status=focused]
+{
+	border : 1px solid #5eb7ff;
+	background : #ffffff;
+}
+.GridCellControl .cellcalendar[status=mouseover]
+{
+	border : 0px none;
+	background : transparent;
+}
+.GridCellControl .cellcombo[status=mouseover]
+{
+	border : 0px none;
+	background : transparent;
+}
+.GridCellControl .cellcombo[status=focused]
+{
+	border : 1px solid #5eb7ff;
+	background : #ffffff;
+}
+.GridCellControl .celledit[status=mouseover]
+{
+	border : 1px solid #5eb7ff;
+}
+.GridCellControl .celledit[status=focused]
+{
+	border : 1px solid #5eb7ff;
+}
+.GridCellControl .cellmaskedit[status=mouseover]
+{
+	border : 1px solid #5eb7ff;
+}
+.GridCellControl .cellmaskedit[status=focused]
+{
+	border : 1px solid #5eb7ff;
+}
+.GridCellControl .celltextarea[status=mouseover]
+{
+	border : 1px solid #5eb7ff;
+}
+.GridCellControl .celltextarea[status=focused]
+{
+	border : 1px solid #5eb7ff;
+}
+.FileDownload[status=mouseover]
+{
+	border : 1px solid #000000;
+	background : linear-gradient(#eaebec 0%,#ffffff 100%);
+}
+.FileUpload .fileuploaditem .fileuploaditemedit[status=mouseover]
+{
+	border : 1px solid #c4c4c4;
+	background : #ffffff;
+}
+.FileUpload .fileuploaditem .fileuploaditemedit[status=focused]
+{
+	border : 1px solid #c4c4c4;
+	background : #ffffff;
+}
+.FileUpload .fileuploaditem .fileuploaditembutton[status=mouseover]
+{
+	border : 1px solid #000000;
+	background : linear-gradient(#eaebec 0%,#ffffff 100%);
+}
+.FileUpload .fileuploaditem .fileuploaditembutton[status=focused]
+{
+	border : 1px solid #000000;
+	background : linear-gradient(#eaebec 0%,#ffffff 100%);
+}
+.Button.btn_TF_menu[status=focused]
+{
+	border : 0px none;
+	background : URL("./images/btn_TF_MenuLine.png") no-repeat left center transparent;
+	color : #ffc96b;
+	font : bold 15px "Malgun Gothic","Verdana";
+}
+.Button.btn_TF_menu[status=mouseover]
+{
+	border : 0px none;
+	background : URL("./images/btn_TF_MenuLine.png") no-repeat left center transparent;
+	color : #ffc96b;
+	font : bold 15px "Malgun Gothic","Verdana";
+}
+.Button.btn_TF_menu_s[status=focused]
+{
+	border : 0px none;
+	background : URL("./images/btn_TF_MenuLine.png") no-repeat left center transparent;
+	color : #ffc26b;
+	font : bold 15px "Malgun Gothic","Verdana";
+}
+.Button.btn_TF_menu_s[status=mouseover]
+{
+	border : 0px none;
+	background : URL("./images/btn_TF_MenuLine.png") no-repeat left center transparent;
+	color : #ffc26b;
+	font : bold 15px "Malgun Gothic","Verdana";
+}
+.Button.btn_TF_Logout[status=focused]
+{
+	border : 0px none;
+	background : #111111;
+	color : #ffffff;
+	font : 11px "Malgun Gothic","Verdana";
+}
+.Button.btn_TF_Logout[status=mouseover]
+{
+	border : 0px none;
+	background : #111111;
+	color : #ffffff;
+	font : 11px "Malgun Gothic","Verdana";
+}
+.Button.btn_LF_Menu[status=mouseover]
+{
+	border : 0px none;
+	background : #d3d3d3;
+	color : #ffffff;
+}
+.Button.btn_LF_Menu[status=focused]
+{
+	border : 0px none;
+	color : #ffffff;
+	background : #5692C2;
+}
+.Grid.grd_LF_Menu .body .row .cell[status=mouseover]
+{
+	background : transparent;
+	border : 0px none;
+	color : #262626;
+}
+.Button.btn_MDI_Max[status=mouseover]
+{
+	background : #b4b4b4;
+	border : 0px none;
+}
+.Button.btn_MDI_Min[status=mouseover]
+{
+	background : #b4b4b4;
+	border : 0px none;
+}
+.Button.btn_MDI_Verti[status=mouseover]
+{
+	background : #b4b4b4;
+	border : 0px none;
+}
+.Button.btn_MDI_Horz[status=mouseover]
+{
+	background : #b4b4b4;
+	border : 0px none;
+}
+.Button.btn_MDI_AllX[status=mouseover]
+{
+	background : #b4b4b4;
+	border : 0px none;
+}
+.Tab.tab_MDI_Tab .tabbuttonitemTab.tabbuttonitemTabtab_MDI_Tab[status=mouseover]
+{
+	border : 1px solid #d3d3d3;
+	background : #d3d3d3;
+	color : #ffffff;
+}
+.Button.btn_WF_CRUD[status=mouseover]
+{
+	border : 1px solid #313340;
+	background : #313340;
+	color : #ffffff;
+}
+.Button.btn_WF_CRUD[status=focused]
+{
+	border : 1px solid #313340;
+	background : #313340;
+	color : #ffffff;
+}
+.Button.btn_WF_POP_OK[status=mouseover]
+{
+	border : 1px solid #133985;
+	background : #133985;
+	color : #ffffff;
+}
+.Button.btn_WF_POP_OK[status=focused]
+{
+	border : 1px solid #133985;
+	background : #133985;
+	color : #ffffff;
+}
+.Button.btn_WF_Find[status=mouseover]
+{
+	border : 0px none;
+	background : #3d8dd2;
+}
+.Button.btn_WF_PopSearch[status=mouseover]
+{
+	border : 0px none;
+	background : url('./images/icon_search.png') no-repeat center center /contain;
+}
+.ListViewCellControl .cellbutton[status=focused]
+{
+	border : 1px solid #000000;
+}
+.ListViewCellControl .cellbutton[status=mouseover]
+{
+	border : 1px solid #000000;
+}
+.ListViewCellControl .cellcalendar[status=mouseover]
+{
+	border : 1px solid #00b1eb;
+}
+.ListViewCellControl .cellcalendar[status=focused]
+{
+	border : 1px solid #00b1eb;
+}
+.ListViewCellControl .cellcombo[status=focused]
+{
+	border : 1px solid #00b1eb;
+}
+.ListViewCellControl .cellcombo[status=mouseover]
+{
+	border : 1px solid #00b1eb;
+}
+.ListViewCellControl .celledit[status=focused]
+{
+	border : 1px solid #000000;
+}
+.ListViewCellControl .celledit[status=mouseover]
+{
+	border : 1px solid #000000;
+}
+.ListViewCellControl .cellmaskedit[status=focused]
+{
+	border : 1px solid #000000;
+}
+.ListViewCellControl .cellmaskedit[status=mouseover]
+{
+	border : 1px solid #000000;
+}
+.ListViewCellControl .celltextarea[status=focused]
+{
+	border : 1px solid #000000;
+}
+.ListViewCellControl .celltextarea[status=mouseover]
+{
+	border : 1px solid #000000;
+}
+.Button.btn_WF_RtlLogout[status=mouseover]
+{
+	font : bold 28px "Malgun Gothic";
+}
+.Button.btn_WF_RtlLogout[status=mouseover] .nexacontentsbox
+{
+	text-align : left;
+}
+.Button.btn_WF_Status[status=mouseover]
+{
+	border : 1px solid #143a84;
+}
+.Button.btn_WF_Status[status=focused]
+{
+	border : 1px solid #143a84;
+}
+.Grid.grd_WF_Board .body .row .cell[status=mouseover]
+{
+	background : transparent;
+	font : 13px "Verdana,Malgun Gothic";
+}
+.Grid.grd_WF_Board .body .row .cell.oddcell[status=mouseover]
+{
+	background : transparent;
+}
+.Grid.grd_WF_Board .body .row .cell .celltextarea[status=mouseover]
+{
+	border : 0px none;
+	cursor : default;
+}
+.Grid.grd_WF_Board .body .row .cell .celltextarea[status=mouseover] .nexatextarea
+{
+	text-decoration : underline;
+}
+.Grid.grd_WF_Board .body .row .cell .celltextarea[status=focused]
+{
+	border : 0px none;
+	cursor : default;
+}
+.Grid.grd_WF_Board .body .row .cell .celltextarea[status=focused] .nexatextarea
+{
+	text-decoration : underline;
+}
+.Button.btn_WF_calMonthNext[status=focused]
+{
+	background : transparent;
+	border : 0px none;
+	cursor : pointer;
+}
+.Button.btn_WF_calMonthNext[status=mouseover]
+{
+	background : transparent;
+	border : 0px none;
+	cursor : pointer;
+}
+.Button.btn_WF_calMonthPrev[status=focused]
+{
+	background : transparent;
+	border : 0px none;
+	cursor : pointer;
+}
+.Button.btn_WF_calMonthPrev[status=mouseover]
+{
+	background : transparent;
+	border : 0px none;
+	cursor : pointer;
+}
+.Button.btn_WF_FrmMain[status=focused]
+{
+	border : 0px none, 1px solid #134d8e, 1px solid #115095, 0px none;
+	background : linear-gradient(to bottom, #2e76c6,#155eaf);
+	color : #ffffff;
+}
+.Button.btn_WF_FrmMain[status=mouseover]
+{
+	border : 0px none, 1px solid #134d8e, 1px solid #115095, 0px none;
+	background : linear-gradient(to bottom, #2e76c6,#155eaf);
+	color : #ffffff;
+}
+.Button.btn_WF_FrmSub[status=focused]
+{
+	border : 0px none, 1px solid #155a97, 1px solid #125d9f, 0px none;
+	background : linear-gradient(to bottom, #3e8dd3,#176ebb);
+	color : #ffffff;
+}
+.Button.btn_WF_FrmSub[status=mouseover]
+{
+	border : 0px none, 1px solid #155a97, 1px solid #125d9f, 0px none;
+	background : linear-gradient(to bottom, #3e8dd3,#176ebb);
+	color : #ffffff;
+}
+.Button.btn_POP_Btn[status=focused]
+{
+	border : 0px none, 1px solid #163b74, 1px solid #153e7a, 0px none;
+	background : linear-gradient(to bottom, #2b5ca9,#1a4990);
+	color : #ffffff;
+}
+.Button.btn_POP_Btn[status=mouseover]
+{
+	border : 0px none, 1px solid #163b74, 1px solid #153e7a, 0px none;
+	background : linear-gradient(to bottom, #2b5ca9,#1a4990);
+	color : #ffffff;
+}
+.Button.btn_POP_Cancel[status=focused]
+{
+	border : 1px solid #c4c4c4, 1px solid #919191, 1px solid #898989, 1px solid #c4c4c4;
+	background : linear-gradient(to bottom, #fefefe,#f0f0f0);
+	color : #333333;
+}
+.Button.btn_POP_Cancel[status=mouseover]
+{
+	border : 1px solid #c4c4c4, 1px solid #919191, 1px solid #898989, 1px solid #c4c4c4;
+	background : linear-gradient(to bottom, #fefefe,#f0f0f0);
+	color : #333333;
+}
+.Button.btn_WF_Detail[status=focused]
+{
+	border : 1px solid #34465d;
+	background : #43556b;
+	color : #ffffff;
+}
+.Button.btn_WF_Detail[status=mouseover]
+{
+	border : 1px solid #34465d;
+	background : #43556b;
+	color : #ffffff;
+}
+.Button.btn_POP_Close[status=mouseover]
+{
+	border : 0px none;
+	background : URL("./images/btn_POP_Close.png") no-repeat center center transparent;
+}
+.Button.btn_POP_Close[status=focused]
+{
+	border : 0px none;
+	background : URL("./images/btn_POP_Close.png") no-repeat center center transparent;
+}
+.Grid.grd_mCombo .body .row .cell[status=mouseover]
+{
+	background : #f1f9fe;
+}
+.Grid.grd_mCombo .body .row .cell.oddcell[status=mouseover]
+{
+	background : #f1f9fe;
+}
+.Button.btn_WF_boomark[status=focused]
+{
+	border : 0px none;
+	background : transparent;
+}
+.Button.btn_WF_boomark[status=mouseover]
+{
+	border : 0px none;
+	background : transparent;
+}
+.Button.btn_WF_boomark_S[status=focused]
+{
+	border : 0px none;
+	background : transparent;
+}
+.Button.btn_WF_boomark_S[status=mouseover]
+{
+	border : 0px none;
+	background : transparent;
+}
+.Form[userstatus=contents]
+{
+	background : transparent;
+}
+.VScrollBarControl .trackbar[userstatus=pushed]
+{
+	background : #919396;
+}
+.HScrollBarControl .trackbar[userstatus=pushed]
+{
+	background : #919396;
+}
+.TitleBarControl .minbutton[userstatus=pushed]
+{
+	background : #ffffff;
+}
+.TitleBarControl .maxbutton[userstatus=pushed]
+{
+	background : #ffffff;
+}
+.TitleBarControl .normalbutton[userstatus=pushed]
+{
+	background : #ffffff;
+}
+.TitleBarControl .closebutton[userstatus=pushed]
+{
+	background : #ffffff;
+}
+.Edit[userstatus=nulltext]
+{
+	color : #888888;
+}
+.Edit.edt_Login_id[userstatus=nulltext]
+{
+	padding : 0px 0px 0px 40px;
+	color : #999999;
+	font : 16px "Malgun Gothic","Verdana";
+}
+.Edit.edt_Login_pw[userstatus=nulltext]
+{
+	padding : 0px 0px 0px 40px;
+	color : #999999;
+	font : 16px "Malgun Gothic","Verdana";
+}
+.MaskEdit[userstatus=nulltext]
+{
+	color : #888888;
+}
+.MaskEdit[userstatus=invalidtext]
+{
+	color : #eb174e;
+}
+.TextArea[userstatus=nulltext]
+{
+	color : #888888;
+}
+.Button[userstatus=pushed]
+{
+	border : 1px solid #000000;
+	background : linear-gradient(#eaebec 0%,#ffffff 100%);
+}
+.Button.btn_Login[userstatus=selected]
+{
+	border : 0px none, 1px solid #2b86bb, 1px solid #2b8cc4, 0px none;
+	background : linear-gradient(to bottom, #51b3ea,#319ddc);
+	color : #ffffff;
+	font : bold 16px "Malgun Gothic","Verdana";
+	letter-spacing : -1px;
+}
+.Button.btn_Login[userstatus=pushed]
+{
+	border : 0px none, 1px solid #155a97, 1px solid #115095, 0px none;
+	background : linear-gradient(to bottom, #2f77c7,#155eaf);
+	color : #ffffff;
+}
+.ListBox .listboxitem[userstatus=selected]
+{
+	background : #00b1eb;
+	color : #ffffff;
+}
+.ListBoxControl .listboxitem[userstatus=selected]
+{
+	background : #00b1eb;
+	color : #ffffff;
+}
+.Calendar .calendarspindownbutton[userstatus=pushed]
+{
+	background : #eaebec;
+}
+.Calendar .calendarspinupbutton[userstatus=pushed]
+{
+	background : #eaebec;
+}
+.DatePickerControl .body .weekitem[userstatus=saturday]
+{
+	color : #143a84;
+}
+.DatePickerControl .body .weekitem[userstatus=sunday]
+{
+	color : #ce2024;
+}
+.DatePickerControl .body .dayitem[userstatus=saturday]
+{
+	color : #143a84;
+}
+.DatePickerControl .body .dayitem[userstatus=selected]
+{
+	background : #00b1eb;
+	color : #ffffff;
+}
+.DatePickerControl .body .dayitem[userstatus=sunday]
+{
+	color : #ce2024;
+}
+.DatePickerControl .body .dayitem[userstatus=today]
+{
+	background : #e7f5fe;
+}
+.DatePickerControl .body .dayitem[userstatus=trailingday]
+{
+	color : #d8d9da;
+}
+.Tab .tabbuttonitemTab[userstatus=selected]
+{
+	border : 1px solid #c4c4c4,1px solid #919396,0px none;
+	background : #ffffff;
+}
+.Tab .nextbuttonTab[userstatus=pushed]
+{
+	background : #919396;
+}
+.Tab .prevbuttonTab[userstatus=pushed]
+{
+	background : #919396;
+}
+.Menu .menuitem[userstatus=selected]
+{
+	background : #4a4a49;
+	color : #ffffff;
+}
+.Grid .body .row .cell[userstatus=selected]
+{
+	background : #edf1f7;
+}
+.GridCellControl .cellbutton[userstatus=selected]
+{
+	border : 1px solid #000000;
+}
+.GridCellControl .cellbutton[userstatus=pushed]
+{
+	background : linear-gradient(#d9d9d9 0%,#ffffff 100%);
+}
+.FileDownload[userstatus=pushed]
+{
+	border : 1px solid #000000;
+	background : linear-gradient(#eaebec 0%,#ffffff 100%);
+}
+.Button.btn_TF_menu[userstatus=selected]
+{
+	border : 0px none;
+	background : URL("./images/btn_TF_MenuLine.png") no-repeat left center transparent;
+	color : #ffc96b;
+	font : bold 15px "Malgun Gothic","Verdana";
+}
+.Button.btn_TF_menu[userstatus=pushed]
+{
+	border : 0px none;
+	background : URL("./images/btn_TF_MenuLine.png") no-repeat left center transparent;
+	color : #ffc96b;
+	font : bold 15px "Malgun Gothic","Verdana";
+}
+.Button.btn_TF_menu_s[userstatus=pushed]
+{
+	border : 0px none;
+	background : URL("./images/btn_TF_MenuLine.png") no-repeat left center transparent;
+	color : #ffc26b;
+	font : bold 15px "Malgun Gothic","Verdana";
+}
+.Button.btn_TF_menu_s[userstatus=selected]
+{
+	border : 0px none;
+	background : URL("./images/btn_TF_MenuLine.png") no-repeat left center transparent;
+	color : #ffc26b;
+	font : bold 15px "Malgun Gothic","Verdana";
+}
+.Button.btn_TF_Logout[userstatus=selected]
+{
+	border : 0px none;
+	background : #111111;
+	color : #b8b8b8;
+	font : 11px "Malgun Gothic","Verdana";
+}
+.Button.btn_TF_Logout[userstatus=pushed]
+{
+	border : 0px none;
+	background : #111111;
+	color : #ffffff;
+	font : 11px "Malgun Gothic","Verdana";
+}
+.Button.btn_LF_Menu[userstatus=pushed]
+{
+	border : 0px none;
+	color : #ffffff;
+	background : #5692C2;
+}
+.Button.btn_LF_Menu[userstatus=selected]
+{
+	border : 0px none;
+	color : #ffffff;
+	background : #5692C2;
+}
+.Grid.grd_LF_Menu .body .row .cell[userstatus=selected]
+{
+	background : transparent;
+	color : #1E48CD;
+	font : bold 13px "Verdana","Malgun Gothic";
+}
+.Button.btn_MDI_Max[userstatus=pushed]
+{
+	background : #b4b4b4;
+	border : 0px none;
+}
+.Button.btn_MDI_Min[userstatus=pushed]
+{
+	background : #b4b4b4;
+	border : 0px none;
+}
+.Button.btn_MDI_Verti[userstatus=pushed]
+{
+	background : #b4b4b4;
+	border : 0px none;
+}
+.Button.btn_MDI_Horz[userstatus=pushed]
+{
+	background : #b4b4b4;
+	border : 0px none;
+}
+.Button.btn_MDI_AllX[userstatus=pushed]
+{
+	background : #b4b4b4;
+	border : 0px none;
+}
+.Tab.tab_MDI_Tab .tabbuttonitemTab.tabbuttonitemTabtab_MDI_Tab[userstatus=selected]
+{
+	border : 1px solid #5692C2;
+	background : #5692C2;
+	color : #ffffff;
+}
+.Button.btn_WF_CRUD[userstatus=pushed]
+{
+	border : 1px solid #313340;
+	background : #313340;
+	color : #ffffff;
+}
+.Button.btn_WF_POP_OK[userstatus=pushed]
+{
+	border : 1px solid #133985;
+	background : #133985;
+	color : #ffffff;
+}
+.Button.btn_WF_Find[userstatus=pushed]
+{
+	border : 0px none;
+	background : #3d8dd2;
+}
+.Button.btn_WF_PopSearch[userstatus=pushed]
+{
+	border : 0px none;
+	background : url('./images/icon_search.png') no-repeat center center /contain;
+}
+.ListView .body.lstv_WF_BdyFormat1[userstatus=selected]
+{
+	background : #fff7f6;
+}
+.ListView .body.lstv_WF_BdyFormat2[userstatus=selected]
+{
+	background : #fff7f6;
+}
+.ListView .body[userstatus=selected]
+{
+	background : #e7f5fe;
+}
+.ListView .detail[userstatus=selected]
+{
+	background : #f4f5f5;
+}
+.ListViewDetailBandControl.popupListViewdetail.dummy[userstatus=selected]
+{
+	background : #f4f5f5;
+}
+.ListViewCellControl .cellbutton[userstatus=pushed]
+{
+	border : 1px solid #000000;
+	background : linear-gradient(#eaebec 0%,#ffffff 100%);
+}
+.Button.btn_WF_RtlLogout[userstatus=pushed]
+{
+	font : bold 28px "Malgun Gothic";
+}
+.Button.btn_WF_RtlLogout[userstatus=pushed] .nexacontentsbox
+{
+	text-align : left;
+}
+.Button.btn_WF_Status[userstatus=pushed]
+{
+	border : 1px solid #143a84;
+	background : #143a84;
+	color : #ffffff;
+}
+.Button.btn_WF_Status[userstatus=selected]
+{
+	border : 1px solid #143a84;
+	background : #143a84;
+	color : #ffffff;
+}
+.Grid.grd_WF_Board .body .row .cell[userstatus=selected]
+{
+	background : transparent;
+	font : 13px "Verdana,Malgun Gothic";
+}
+.Grid.grd_WF_Board .body .row .cell.oddcell[userstatus=selected]
+{
+	background : transparent;
+}
+.Button.btn_WF_calMonthNext[userstatus=selected]
+{
+	background : transparent;
+	border : 0px none;
+	cursor : pointer;
+}
+.Button.btn_WF_calMonthPrev[userstatus=selected]
+{
+	background : transparent;
+	border : 0px none;
+	cursor : pointer;
+}
+.Button.btn_WF_FrmMain[userstatus=selected]
+{
+	border : 0px none, 1px solid #145ea0, 1px solid #1461a6, 0px none;
+	background : linear-gradient(to bottom, #3d8dd2,#176ebb);
+	color : #ffffff;
+	font : normal 700 13px/normal "Verdana,Malgun Gothic";
+}
+.Button.btn_WF_FrmMain[userstatus=pushed]
+{
+	border : 0px none, 1px solid #163b75, 1px solid #163e7a, 0px none;
+	background : linear-gradient(to bottom, #2b5ca8,#1a4990);
+	color : #ffffff;
+}
+.Button.btn_WF_FrmSub[userstatus=selected]
+{
+	border : 0px none, 1px solid #2b86bb, 1px solid #2b8cc4, 0px none;
+	background : linear-gradient(to bottom, #51b3ea,#319ddc);
+	color : #ffffff;
+}
+.Button.btn_WF_FrmSub[userstatus=pushed]
+{
+	border : 0px none, 1px solid #155a97, 1px solid #115095, 0px none;
+	background : linear-gradient(to bottom, #2f77c7,#155eaf);
+	color : #ffffff;
+}
+.Button.btn_POP_Btn[userstatus=selected]
+{
+	border : 0px none, 1px solid #405475, 1px solid #4b638a, 0px none;
+	background : linear-gradient(to bottom, #6379a1,#4b638a);
+	color : #ffffff;
+}
+.Button.btn_POP_Btn[userstatus=pushed]
+{
+	border : 0px none, 1px solid #163c75, 1px solid #153e7a, 0px none;
+	background : linear-gradient(to bottom, #2b5ca9,#1a4990);
+	color : #ffffff;
+}
+.Button.btn_POP_Cancel[userstatus=selected]
+{
+	border : 1px solid #cccccc, 1px solid #a1a1a1, 1px solid #999999, 1px solid #cccccc;
+	background : linear-gradient(to bottom, #ffffff,#f5f5f5);
+	color : #333333;
+}
+.Button.btn_POP_Cancel[userstatus=pushed]
+{
+	border : 1px solid #c0c0c0, 1px solid #7e7e7e, 1px solid #737373, 1px solid #c0c0c0;
+	background : linear-gradient(to bottom, #fdfdfd,#e6e6e6);
+	color : #333333;
+}
+.Button.btn_WF_Detail[userstatus=selected]
+{
+	border : 1px solid #5f7086;
+	background : #718093;
+	color : #ffffff;
+}
+.Button.btn_WF_Detail[userstatus=pushed]
+{
+	border : 1px solid #11233b;
+	background : #21354f;
+	color : #ffffff;
+}
+.Button.btn_POP_Close[userstatus=pushed]
+{
+	border : 0px none;
+	background : URL("./images/btn_POP_Close.png") no-repeat center center transparent;
+}
+.Button.btn_POP_Close[userstatus=selected]
+{
+	border : 0px none;
+	background : URL("./images/btn_POP_Close.png") no-repeat center center transparent;
+}
+.Grid.grd_mCombo .body .row .cell[userstatus=selected]
+{
+	background : #d1ebfc;
+}
+.Grid.grd_mCombo .body .row .cell.oddcell[userstatus=selected]
+{
+	background : #d1ebfc;
+}
+.Button.btn_WF_boomark[userstatus=selected]
+{
+	border : 0px none;
+	background : transparent;
+}
+.Button.btn_WF_boomark[userstatus=pushed]
+{
+	border : 0px none;
+	background : transparent;
+}
+.Button.btn_WF_boomark_S[userstatus=selected]
+{
+	border : 0px none;
+	background : transparent;
+}
+.Button.btn_WF_boomark_S[userstatus=pushed]
+{
+	border : 0px none;
+	background : transparent;
+}
+.VScrollBarControl[status=disabled]
+{
+	opacity : 0.5;
+}
+.VScrollBarControl .decbutton[status=disabled]
+{
+	opacity : 0.5;
+}
+.VScrollBarControl .incbutton[status=disabled]
+{
+	opacity : 0.5;
+}
+.VScrollBarControl .trackbar[status=disabled]
+{
+	opacity : 0.5;
+}
+.HScrollBarControl[status=disabled]
+{
+	opacity : 0.5;
+}
+.HScrollBarControl .decbutton[status=disabled]
+{
+	opacity : 0.5;
+}
+.HScrollBarControl .incbutton[status=disabled]
+{
+	opacity : 0.5;
+}
+.HScrollBarControl .trackbar[status=disabled]
+{
+	opacity : 0.5;
+}
+.Static[status=disabled]
+{
+	opacity : 0.5;
+}
+.Edit[status=disabled]
+{
+	opacity : 0.5;
+}
+.MaskEdit[status=disabled]
+{
+	opacity : 0.5;
+}
+.TextArea[status=disabled]
+{
+	opacity : 0.5;
+}
+.Button.btn_Login[status=disabled]
+{
+	border : 0px none, 1px solid #509cc9, 1px solid #4b9dcd, 0px none;
+	background : linear-gradient(to bottom, #6bbeed,#50ace1);
+	color : #b0dcf4;
+}
+.Button[status=disabled]
+{
+	opacity : 0.5;
+}
+.CheckBox[status=disabled]
+{
+	opacity : 0.5;
+}
+.Spin[status=disabled]
+{
+	opacity : 0.5;
+}
+.Radio .radioitem[status=disabled]
+{
+	opacity : 0.5;
+}
+.ListBox[status=disabled]
+{
+	opacity : 0.5;
+}
+.ListBoxControl[status=disabled]
+{
+	opacity : 0.5;
+}
+.Combo[status=disabled]
+{
+	opacity : 0.5;
+}
+.Calendar[status=disabled]
+{
+	opacity : 0.5;
+}
+.DatePickerControl .head .nextbutton[status=disabled]
+{
+	opacity : 0.5;
+}
+.DatePickerControl .head .prevbutton[status=disabled]
+{
+	opacity : 0.5;
+}
+.DatePickerControl .head .yearspin .spindownbutton[status=disabled]
+{
+	opacity : 0.5;
+}
+.DatePickerControl .head .yearspin .spinupbutton[status=disabled]
+{
+	opacity : 0.5;
+}
+.DatePickerControl .head .monthspin .spindownbutton[status=disabled]
+{
+	opacity : 0.5;
+}
+.DatePickerControl .head .monthspin .spinupbutton[status=disabled]
+{
+	opacity : 0.5;
+}
+.Tab .tabbuttonitemTab[status=disabled]
+{
+	opacity : 0.5;
+}
+.Tab .nextbuttonTab[status=disabled]
+{
+	opacity : 0.5;
+}
+.Tab .prevbuttonTab[status=disabled]
+{
+	opacity : 0.5;
+}
+.GroupBox .groupboxcontents[status=disabled]
+{
+	opacity : 0.5;
+}
+.GroupBox .groupboxtitle[status=disabled]
+{
+	color : #888888;
+}
+.ProgressBar[status=disabled]
+{
+	opacity : 0.5;
+}
+.ProgressBar .progressbaritem[status=disabled]
+{
+	background : #eaebec;
+}
+.PopupMenu .popupmenuitem[status=disabled]
+{
+	opacity : 0.5;
+}
+.PopupMenuControl .popupmenuitem[status=disabled]
+{
+	opacity : 0.5;
+}
+.GridCellControl .cellbutton[status=disabled]
+{
+	opacity : 0.5;
+}
+.GridCellControl .cellcalendar[status=disabled]
+{
+	opacity : 0.5;
+}
+.GridCellControl .cellcheckbox[status=disabled]
+{
+	opacity : 0.5;
+}
+.GridCellControl .cellcombo[status=disabled]
+{
+	opacity : 0.5;
+}
+.GridCellControl .celledit[status=disabled]
+{
+	opacity : 0.5;
+}
+.GridCellControl .cellmaskedit[status=disabled]
+{
+	opacity : 0.5;
+}
+.GridCellControl .celltextarea[status=disabled]
+{
+	opacity : 0.5;
+}
+.GridCellControl .cellexpandbutton[status=disabled]
+{
+	opacity : 0.5;
+}
+.GridCellControl .celltreeitem .treeitemcheckbox[status=disabled]
+{
+	opacity : 0.5;
+}
+.FileDownload[status=disabled]
+{
+	opacity : 0.5;
+}
+.FileUpload .fileuploaditem .fileuploaditemedit[status=disabled]
+{
+	opacity : 0.5;
+}
+.FileUpload .fileuploaditem .fileuploaditembutton[status=disabled]
+{
+	opacity : 0.5;
+}
+.Button.btn_TF_menu[status=disabled]
+{
+	border : 0px none;
+	background : URL("./images/btn_TF_MenuLine.png") no-repeat left center transparent;
+	color : #8bafd9;
+	font : bold 15px "Malgun Gothic","Verdana";
+}
+.Button.btn_TF_menu_s[status=disabled]
+{
+	border : 0px none;
+	background : URL("./images/btn_TF_MenuLine.png") no-repeat left center transparent;
+	color : #8bafd9;
+	font : bold 15px "Malgun Gothic","Verdana";
+}
+.Button.btn_TF_Logout[status=disabled]
+{
+	border : 0px none;
+	background : #111111;
+	color : #6c6c6c;
+	font : 11px "Malgun Gothic","Verdana";
+}
+.Button.btn_LF_Menu[status=disabled]
+{
+	border : 0px none;
+	color : #ffffff;
+	background : #5692C2;
+}
+.Button.btn_WF_CRUD[status=disabled]
+{
+	opacity : 0.5;
+}
+.Button.btn_WF_POP_OK[status=disabled]
+{
+	opacity : 0.5;
+}
+.Grid .body .row .cell.cell_WF_RdoType .cellcheckbox[status=disabled]
+{
+	opacity : 0.5;
+}
+.ListView[status=disabled]
+{
+	opacity : 0.5;
+}
+.ListViewCellControl .cellbutton[status=disabled]
+{
+	opacity : 0.5;
+}
+.ListViewCellControl .cellcalendar[status=disabled]
+{
+	opacity : 0.5;
+}
+.ListViewCellControl .cellcheckbox[status=disabled]
+{
+	opacity : 0.5;
+}
+.ListViewCellControl .cellcombo[status=disabled]
+{
+	opacity : 0.5;
+}
+.ListViewCellControl .celledit[status=disabled]
+{
+	opacity : 0.5;
+}
+.ListViewCellControl .cellmaskedit[status=disabled]
+{
+	opacity : 0.5;
+}
+.ListViewCellControl .celltextarea[status=disabled]
+{
+	opacity : 0.5;
+}
+.ListViewCellControl .cellexpandbutton[status=disabled]
+{
+	opacity : 0.5;
+}
+.Button.btn_WF_RtlLogout[status=disabled]
+{
+	font : bold 28px "Malgun Gothic";
+}
+.Button.btn_WF_RtlLogout[status=disabled] .nexacontentsbox
+{
+	text-align : left;
+}
+.Button.btn_WF_Status[status=disabled]
+{
+	opacity : 0.5;
+}
+.Button.btn_WF_FrmMain[status=disabled]
+{
+	border : 0px none, 1px solid #3173ac, 1px solid #1461a6, 0px none;
+	background : linear-gradient(to bottom, #5199d7,#2f7dc2);
+	color : #ffffff;
+}
+.Button.btn_WF_FrmSub[status=disabled]
+{
+	border : 0px none, 1px solid #509cc9, 1px solid #4b9dcd, 0px none;
+	background : linear-gradient(to bottom, #6bbeed,#50ace1);
+	color : #ffffff;
+}
+.Button.btn_POP_Btn[status=disabled]
+{
+	border : 0px none, 1px solid #5c6d8a, 1px solid #5e718e, 0px none;
+	background : linear-gradient(to bottom, #7a8daf,#667a9b);
+	color : #b9c3d4;
+}
+.Button.btn_POP_Cancel[status=disabled]
+{
+	border : 1px solid #d1d1d1, 1px solid #ababab, 1px solid #999999, 1px solid #d1d1d1;
+	background : linear-gradient(to bottom, #ffffff,#f6f6f6);
+	color : #a6a6a6;
+}
+.Button.btn_WF_Add[status=disabled]
+{
+	opacity : 0.5;
+}
+.Button.btn_WF_Del[status=disabled]
+{
+	opacity : 0.5;
+}
+.Button.btn_WF_Detail[status=disabled]
+{
+	border : 1px solid #8a8a8a;
+	background : #999999;
+	color : #595959;
+}
+.Button.btn_WF_boomark[status=disabled]
+{
+	border : 0px none;
+	background : transparent;
+}
+.Button.btn_WF_boomark_S[status=disabled]
+{
+	border : 0px none;
+	background : transparent;
+}
+.CheckBox[status=disabled][userstatus=selected]
+{
+	opacity : 0.5;
+}
+.Radio .radioitem[status=disabled][userstatus=selected]
+{
+	opacity : 0.5;
+}

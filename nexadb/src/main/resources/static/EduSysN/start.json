@@ -1,0 +1,74 @@
+﻿{
+    "version" : "21.0.0.1",
+    "runtime" :
+    {
+        "target" :
+        {
+            "os" : "windows"
+        },
+        "framework" :
+        [    
+        "./nexacrolib/framework/Framework.js"
+        ],
+        "component" :
+        [    
+        "./nexacrolib/component/CompBase.js",
+        "./nexacrolib/component/ComComp.js",
+        "./nexacrolib/component/Grid.js",
+        "./nexacrolib/component/DeviceAPI.js",
+        "./nexacrolib/component/ListView.js",
+        "./nexacrolib/component/EduJS/EduComp.js",
+        "./nexacrolib/component/EduJS/EduFrame.js",
+        "./nexacrolib/component/EduJS/EduUtil.js",
+        "./nexacrolib/component/EduJS/EduTransaction.js",
+        "./nexacrolib/component/EduJS/EduValidation.js",
+        "./nexacrolib/component/EduJS/EduPopup.js",
+        "./nexacrolib/component/EduJS/EduMessage.js",
+        "./nexacrolib/component/EduJS/EduGrid.js",
+        "./nexacrolib/component/EduJS/EduExcel.js"
+        ],
+        "environment" :
+        [    
+        {
+        "file":"./environment.xml.js"
+        }
+        ],
+        "screen" :
+        [    
+        {"id":"Desktop_screen","type":"desktop","themeid":"theme::Edu"}
+        ],
+        "xadl" :
+        [
+        {
+        	"screenid":"Desktop_screen",
+        	"launch":"./EduSysN.xadl.js",
+        	"quickview":"./EduSysN.xadl.quickview.js",
+        	"form":[
+        				"./FrameBase/Frame_Login.xfdl.js",
+        		"./FrameBase/Frame_Top.xfdl.js",
+        		"./FrameBase/Frame_Left.xfdl.js",
+        		"./FrameBase/Frame_Mdi.xfdl.js",
+        		"./FrameBase/Frame_Main.xfdl.js",
+        		"./FrameBase/Frame_Bottom.xfdl.js"
+        	]
+        }
+        ],  
+        "protocol" :
+        {
+            "adaptors" :
+            []
+        },
+        "resource" :
+        {
+
+        },
+		"deploy" :
+        {
+
+        },
+        "userfont" :
+        [
+
+        ]
+    }
+}

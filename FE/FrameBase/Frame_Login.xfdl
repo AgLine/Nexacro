@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Frame_Login" width="390" height="500" titletext="Login" background="" onload="Frame_Login_onload">
+    <Layouts>
+      <Layout height="500" width="390">
+        <Static id="st_sizeBase" taborder="0" left="0" top="0" width="49.33%" height="50.00%"/>
+        <Div id="div_login" taborder="1" text="" left="st_sizeBase:-182" top="st_sizeBase:-175" width="370" height="400" border="1ps solid red">
+          <Layouts>
+            <Layout>
+              <Edit id="edt_id" taborder="1" left="40" top="100" width="289" height="50" text="admin" displaynulltext="아이디" inputfilter="none,space,dot,comma" cssclass="edt_Login_id" oninput="Edit_oninput"/>
+              <Static id="st_errMsg1" taborder="3" text="Static00" left="40" top="152" width="289" height="15" cssclass="sta_WF_ErrMsg" visible="false"/>
+              <Edit id="edt_pw" taborder="0" left="40" top="175" width="289" height="50" text="admin" password="true" displaynulltext="비밀번호" cssclass="edt_Login_pw" oninput="Edit_oninput"/>
+              <Button id="btn_login" taborder="2" left="40" top="250" width="289" height="50" onclick="div_login_btn_login_onclick" text="로그인" cssclass="btn_Login"/>
+              <Static id="st_errMsg2" taborder="4" text="Static2" left="40" top="228" width="289" height="15" cssclass="sta_WF_ErrMsg" visible="false"/>
+              <ImageViewer id="ImageViewer00" taborder="5" left="80" top="30" width="220" height="30" image="url('theme://images/sta_TF_NexacroN.png')" stretch="fixaspectratio"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_login">
+        <ColumnInfo>
+          <Column id="ID" type="STRING" size="256"/>
+          <Column id="PW" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row/>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_userInfo">
+        <ColumnInfo>
+          <Column id="name" type="STRING" size="256"/>
+          <Column id="id" type="STRING" size="256"/>
+          <Column id="email" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="div_login.form.edt_id" propid="value" datasetid="ds_login" columnid="ID"/>
+      <BindItem id="item1" compid="div_login.form.edt_pw" propid="value" datasetid="ds_login" columnid="PW"/>
+    </Bind>
+    <Script type="xscript5.1"><![CDATA[/************************************************************************************************
+ * 폼변수 선언 영역
+ ************************************************************************************************/
+this.objApp 	  = this.gfn_getApplication();
+this.objMainframe = this.objApp.mainframe;
+
+
+/************************************************************************************************
+ * 폼 이벤트 영역(onload, onbeforeclose)
+ ************************************************************************************************/
+this.Frame_Login_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+//  this.Form_Login_onsize(); 
+};
+
+/*
+//화면 center 이동
+this.Form_Login_onsize = function()
+{		
+	var nLeft = (this.objMainframe.width / 2)  - Math.round((this.div_login.form.getOffsetWidth()) / 2);
+	var nTop  = (this.objMainframe.height / 2) - Math.round((this.div_login.form.getOffsetHeight()) / 2);
+	
+	if(nLeft <= 0)
+	{
+		this.div_login.form.setOffsetLeft(0);
+	}
+	else
+	{
+		this.div_login.setOffsetLeft(nLeft);
+		this.div_login.setOffsetTop(nTop);
+	}
+};
+*/
+
+this.div_login_btn_login_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sId = this.div_login.form.edt_id.value;
+	var sPw = this.div_login.form.edt_pw.value;
+
+	if(this.gfn_isNull(sId)){
+		this.div_login.form.st_errMsg1.set_text("* " + this.gfn_getMessage("msg.err.validator.required", ["아이디"]));
+		this.div_login.form.st_errMsg1.set_visible(true);	
+		this.div_login.form.edt_id.setFocus();
+		return;		
+	}
+	
+	if(this.gfn_isNull(sPw)){
+		this.div_login.form.st_errMsg2.set_text("* " + this.gfn_getMessage("msg.err.validator.required", ["패스워드"]));
+		this.div_login.form.st_errMsg2.set_visible(true);	
+		this.div_login.form.edt_pw.setFocus();
+		return;
+	}
+	
+	this.fn_login(sId, sPw);
+};
+
+this.fn_login = function(pId, pPw)
+{
+
+    var strId    = "svcLogin";
+	var strUrl   = "svc::loginAction";
+	var inData   = "";
+	var outData  = "gds_user=out_user";
+	var strArg   = "paramId=" + nexacro.wrapQuote(pId) + " paramPw=" + nexacro.wrapQuote(pPw);
+	var callBack = "fn_callback";	
+	this.transaction(strId, strUrl, inData, outData, strArg, callBack);
+
+	//this.fn_callback("svcLogin", 0, "SUCC");
+}
+
+this.fn_callback = function(svcID, errCode, errMsg)
+{
+//     if(svcID == "svcLogin"){
+// 		this.fn_setFrame();
+//     }
+	
+	if(this.objApp.gds_user.getColumn(0,"msg") == "F"){
+		this.alert("틀림틀림틀림");
+	}else{
+		this.fn_setFrame();
+	}
+}
+
+/**
+* 로그인 성공시 처리 프레임 변경 등...
+* @return 
+* @example
+* @memberOf 
+*/ 
+this.fn_setFrame = function()
+{
+    //Login Frame Size 0
+	this.objApp.av_VFrameSet.set_separatesize("0,70,*,25");     
+
+    //Env Variable					
+	nexacro.setEnvironmentVariable("ev_userID"  , this.objApp.gds_user.getColumn(0,"userId"));
+	nexacro.setEnvironmentVariable("ev_userName", this.objApp.gds_user.getColumn(0,"userName"));
+	nexacro.setEnvironmentVariable("ev_authorty", this.objApp.gds_user.getColumn(0,"authorityId"));
+	
+	trace("이름 :: " + nexacro.getEnvironmentVariable("ev_userName"));
+	trace("아이디 :: " + nexacro.getEnvironmentVariable("ev_userID"));
+	trace("권한 :: " + nexacro.getEnvironmentVariable("ev_authorty"));
+//	trace("row갯수 :: " +this.objApp.gds_user.getRowCount());
+    //상위 메뉴 선택 상태
+	this.objApp.av_TopFrame.form.reload();
+	this.objApp.av_LeftFrame.form.fn_changeMenu(nexacro.getEnvironmentVariable("ev_authorty"));
+	
+};
+
+this.Edit_oninput = function(obj:nexacro.Edit,e:nexacro.InputEventInfo)
+{
+	this.div_login.form.st_errMsg1.visible == true ? this.div_login.form.st_errMsg1.set_visible(false) : "";
+	this.div_login.form.st_errMsg2.visible == true ? this.div_login.form.st_errMsg2.set_visible(false) : "";
+};
+
+
+
+this.fn_api_login = function ()
+{
+	var strId    = "svcApiLogin";
+	var strUrl   = "http://localhost:9090/oauth2/authorization/google";
+	var inData   = "";
+	var outData  = "";
+	var strArg   = " ";
+	var callBack = "";	
+	this.transaction(strId, strUrl, inData, outData, strArg, callBack);
+};
+
+this.fn_callbackApi = function ()
+{
+	var strId    = "svcApiLogin";
+	var strUrl   = "svc::loginSession";
+	var inData   = "";
+	var outData  = "ds_userInfo=out_list";
+	var strArg   = "";
+	var callBack = "";	
+	this.transaction(strId, strUrl, inData, outData, strArg, callBack);
+	this.fn_setFrame();
+};
+this.fn_openExternalLink = function() {
+    // 원하는 외부 사이트 URL
+    var externalURL = "http://localhost:9090/oauth2/authorization/google";
+    
+    // 외부 브라우저에서 URL 열기
+    system.execBrowser(externalURL);
+};]]></Script>
+  </Form>
+</FDL>

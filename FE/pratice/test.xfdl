@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="test" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Button id="Button00" taborder="0" text="버튼을만들었다ㅏㅏㅏㅏㅏㅏㅏㅏ" left="720" top="2" width="234" height="68" onclick="Button00_onclick"/>
+        <Grid id="Grid00" taborder="1" left="33" top="80" width="515" height="124" binddataset="ds_sample">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="name"/>
+                <Cell col="1" text="id"/>
+                <Cell col="2" text="tel"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:name"/>
+                <Cell col="1" text="bind:id"/>
+                <Cell col="2" text="bind:tel"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Edit id="edt_name" taborder="2" left="40" top="26" width="140" height="20"/>
+        <Edit id="edt_id" taborder="3" left="190" top="26" width="140" height="20"/>
+        <Edit id="edt_tel" taborder="4" left="340" top="26" width="140" height="20"/>
+        <Static id="Static00" taborder="5" text="name" left="40" top="8" width="120" height="20"/>
+        <Static id="Static01" taborder="6" text="id" left="190" top="8" width="120" height="20" onclick="Static01_onclick"/>
+        <Static id="Static02" taborder="7" text="tel" left="340" top="8" width="120" height="20" onclick="Static02_onclick"/>
+        <Grid id="Grid01" taborder="8" left="48" top="310" width="436" height="102" binddataset="gds_user">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row band="head" size="24"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="userId"/>
+                <Cell col="1" text="userName"/>
+                <Cell col="2" text="authorityId"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:userId"/>
+                <Cell col="1" text="bind:userName"/>
+                <Cell col="2" text="bind:authorityId"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sSvcID    = "svcTest";
+    var sURL      = "svc::selectAll";
+    var sInDs     = "input";
+    var sOutDs    = "ds_sample=out_list";
+    var sParam    = "name="+this.edt_name.value+
+					" id="+this.edt_id.value+
+					" tel="+this.edt_tel.value;
+    var sCallBack = "";
+	
+	this.transaction(sSvcID, sURL, sInDs, sOutDs, sParam, sCallBack); 
+	
+};]]></Script>
+    <Objects>
+      <Dataset id="ds_sample">
+        <ColumnInfo>
+          <Column id="name" type="STRING" size="256"/>
+          <Column id="id" type="STRING" size="256"/>
+          <Column id="tel" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>

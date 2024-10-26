@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Sample_Message" left="0" top="0" width="1028" height="630" titletext="Sample_Message" onload="Form_onload" ontimer="Form_Emp_ontimer">
+    <Layouts>
+      <Layout height="630" width="1028">
+        <Static id="sta_00" taborder="1" text="Message" left="10" top="10" width="86" height="26" cssclass="sta_WF_TitleMain"/>
+        <Grid id="grd_list" taborder="0" left="10" top="46" right="264" bottom="10" binddataset="gds_message" onheadclick="grd_list_onheadclick" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="120"/>
+                <Column size="300"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="30" band="head"/>
+                <Row size="30"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="MSG_ID"/>
+                <Cell col="1" text="MSG_TEXT"/>
+                <Cell col="2" text="MSG_TYPE"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:MSG_ID"/>
+                <Cell col="1" text="bind:MSG_TEXT"/>
+                <Cell col="2" text="bind:MSG_TYPE"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="btn_word" taborder="2" text="Word" top="10" width="66" height="26" right="10" visible="true" cssclass="btn_WF_FrmMain" onclick="btn_word_onclick"/>
+        <Button id="btn_alert" taborder="3" text="Message-Alert" top="10" width="146" height="26" right="425" visible="true" cssclass="btn_WF_FrmMain" onclick="btn_alert_onclick"/>
+        <Grid id="grd_word" taborder="4" top="45" right="10" bottom="10" onheadclick="grd_list_onheadclick" binddataset="gds_word" autofittype="col" width="244">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="110"/>
+                <Column size="110"/>
+              </Columns>
+              <Rows>
+                <Row size="30" band="head"/>
+                <Row size="30"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="WORD_ID"/>
+                <Cell col="1" text="KR"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:WORD_ID"/>
+                <Cell col="1" text="bind:KR"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="btn_confirm" taborder="5" text="Message-Confirm" top="10" width="146" height="26" right="274" visible="true" cssclass="btn_WF_FrmMain" onclick="btn_confirm_onclick"/>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[
+this.Form_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.gfn_formOnLoad(this);
+};
+
+/*
+ * @class 메세지 알림, 확인창 호출
+ * AppVariables Datasets gds_message에 메세지 등록 후 사용
+ *
+ *
+ * 메세지 호출
+   var sMsgId       = "msg.err.validator.length";   //메세지 ID 
+   var arrArg       = ["사원번호", "5자리"];      //메세지 치환 될 배열 값 [생략가능]
+   var sPopId       = sMsgId;                       //메세지 팝업창 ID [생략가능]
+   var sMsgCallback = "fn_msgCallback"              //팝업 콜백 [생략가능, Confirm성 메세지 사용시 필수]
+   this.gfn_alert(sMsgId, arrArg);		
+   this.gfn_alert(sMsgId, arrArg, sPopId, sMsgCallback);		
+ 
+ */
+
+this.btn_alert_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+    //{0}의 입력값의 길이는 {1} 이하이어야 합니다.
+    this.gfn_alert("msg.err.validator.length", ["사원번호", "5자리"]);		
+};
+
+this.btn_confirm_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+   //변경된 내역을 저장 하시겠습니까?
+   var sMsgId       = "confirm.before.save";
+   var arrArg       = "";
+   var sPopId       = sMsgId;
+   var sMsgCallback = "fn_msgCallback"
+   this.gfn_alert(sMsgId, arrArg, sPopId, sMsgCallback);		
+};
+
+this.fn_msgCallback = function(sPopupId, sValue)
+{
+    if(sPopupId == "confirm.before.save"){
+        if(sValue){
+            //Save Script
+            trace(sPopupId + " : " + sValue);
+        }
+    }
+}
+
+
+this.btn_word_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+    var sWord = this.gfn_getWord("user.jumin")
+    this.alert(sWord);
+};
+]]></Script>
+  </Form>
+</FDL>

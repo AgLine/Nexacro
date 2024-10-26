@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="InstallStatus" width="1280" height="720" titletext="New Form" onload="InstallStatus_onload">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Static id="Static00" taborder="0" text="성명" left="50" top="10" width="60" height="15" cssclass="sta_WF_SearchLabel"/>
+        <Edit id="edtName" taborder="1" left="110" top="7" width="140" height="20"/>
+        <Static id="Static01" taborder="2" text="주소" left="250" top="10" width="60" height="15" cssclass="sta_WF_SearchLabel"/>
+        <Edit id="edtAddr" taborder="3" left="310" top="7" width="140" height="20"/>
+        <Combo id="Combo00" taborder="4" text="" left="530" top="7" width="150" height="20" innerdataset="ds_sta" datacolumn="comboName" codecolumn="comboCode" index="0" value="선택"/>
+        <Static id="Static02" taborder="5" text="진행 상황" left="450" top="10" width="80" height="15" cssclass="sta_WF_SearchLabel"/>
+        <Static id="Static03" taborder="6" text="연락처" left="680" top="10" width="70" height="15" cssclass="sta_WF_SearchLabel"/>
+        <Edit id="edtPhone" taborder="7" left="750" top="7" width="140" height="20"/>
+        <Button id="btnSerch" taborder="8" text="조회" left="900" top="5" width="50" height="25" onclick="btnSerch_onclick"/>
+        <Grid id="Grid00" taborder="9" left="50" top="55" width="900" height="270" binddataset="ds_istSta" autofittype="col" oncelldblclick="Grid00_oncelldblclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="성명"/>
+                <Cell col="1" text="주소"/>
+                <Cell col="2" text="연락처"/>
+                <Cell col="3" text="설치요청일"/>
+                <Cell col="4" text="설치상황"/>
+                <Cell col="5" text="담당자"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:clientName"/>
+                <Cell col="1" text="bind:addr"/>
+                <Cell col="2" text="bind:clientPhone"/>
+                <Cell col="3" text="bind:istReqVisitDate"/>
+                <Cell col="4" text="bind:istReqState"/>
+                <Cell col="5" text="bind:pic"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="page1" taborder="10" text="1" left="336" top="400" width="10" height="15" onclick="Static00_onclick" color="#0000ff"/>
+        <Button id="Button01" taborder="11" text="&gt;&gt;" left="566" top="400" width="20" height="20"/>
+        <Button id="btn_right" taborder="12" text="&gt;" left="536" top="400" width="20" height="20" onclick="btn_right_onclick"/>
+        <Static id="page2" taborder="13" text="2" left="356" top="400" width="10" height="15"/>
+        <Static id="page3" taborder="14" text="3" left="376" top="400" width="10" height="15"/>
+        <Static id="page4" taborder="15" text="4" left="396" top="400" width="10" height="15"/>
+        <Static id="page5" taborder="16" text="5" left="416" top="400" width="10" height="15"/>
+        <Static id="page6" taborder="17" text="6" left="436" top="400" width="10" height="15"/>
+        <Static id="page7" taborder="18" text="7" left="456" top="400" width="10" height="15"/>
+        <Static id="page8" taborder="19" text="8" left="476" top="400" width="10" height="15"/>
+        <Static id="page9" taborder="20" text="9" left="496" top="400" width="10" height="15"/>
+        <Static id="page10" taborder="21" text="10" left="516" top="400" width="20" height="15"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_istSta">
+        <ColumnInfo>
+          <Column id="receptionNum" type="STRING" size="256"/>
+          <Column id="clientName" type="STRING" size="256"/>
+          <Column id="addr" type="STRING" size="256"/>
+          <Column id="clientPhone" type="STRING" size="256"/>
+          <Column id="istReqVisitDate" type="STRING" size="256"/>
+          <Column id="istReqState" type="STRING" size="256"/>
+          <Column id="pic" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_sta">
+        <ColumnInfo>
+          <Column id="comboName" type="STRING" size="256"/>
+          <Column id="comboCode" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_tmp">
+        <ColumnInfo>
+          <Column id="MENU_ID" type="STRING" size="256"/>
+          <Column id="MENU_NAME" type="STRING" size="256"/>
+          <Column id="MENU_LEVEL" type="STRING" size="256"/>
+          <Column id="FORM_URL" type="STRING" size="256"/>
+          <Column id="ENABLE" type="STRING" size="256"/>
+          <Column id="MENU_AUTH" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.objApp = this.gfn_getApplication();
+var currentIndex = 1;
+var recepNum;
+this.InstallStatus_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	var strId    = "svcComboGroup";
+	var strUrl   = "svc::comboGroup";
+	var inData   = "";
+	var outData  = "ds_sta=out_combo";
+	var param   = "comboGroup=STATE";
+	var callBack = "fn_callback";
+	this.transaction(strId, strUrl, inData, outData, param, callBack);
+	
+	for (var i = 1; i <= 10; i++) {
+        var staticID = "page" + i;  // Static1, Static2, ... Static10
+        var staticComp = this[staticID];  // 각 Static 컴포넌트를 가져옴
+        staticComp.addEventHandler("onclick", this.onStaticClick, this);
+    }
+	
+	var strId    = "svcIstSta";
+	var strUrl   = "svc::istSta";
+	var inData   = "";
+	var outData  = "ds_istSta=out_istSta";
+	var param   = "page=1";
+	var callBack = "";
+	this.transaction(strId, strUrl, inData, outData, param, callBack);
+};
+
+this.fn_paging = function (page)
+{
+	var strId    = "svcIstSta";
+	var strUrl   = "svc::istSta";
+	var inData   = "";
+	var outData  = "ds_istSta=out_istSta";
+	var param   = "page="+page;
+	var callBack = "";
+	this.transaction(strId, strUrl, inData, outData, param, callBack);
+};
+
+this.onStaticClick = function(obj, e) {
+    // 모든 Static 컴포넌트의 배경색을 기본값으로 되돌림
+    for (var i = 1; i <= 10; i++) {
+        var staticID = "page" + i;
+        var staticComp = this[staticID];
+        staticComp.set_color("black");  // 기본 배경색
+    }
+
+    // 클릭된 Static 컴포넌트만 파란색으로 변경
+	currentIndex = parseInt(obj.name.replace("page", ""));
+//	trace("Current Static Index: " + currentIndex);
+    obj.set_color("blue");
+	this.fn_paging(obj.text);
+};
+
+this.btn_right_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if(currentIndex%10 == 0){
+		return;
+	}
+
+    var currentStatic = this["page" + currentIndex];
+    currentStatic.set_color("black");
+
+
+    currentIndex++;
+ 
+    var nextStatic = this["page" + currentIndex];
+    nextStatic.set_color("blue");
+	this.fn_paging(currentIndex);
+};
+
+this.fn_callback = function ()
+{
+	this.ds_sta.set_enableevent(false);
+	
+	// comboCode의 값이 'IR'로 시작하는 조건으로 필터 설정
+	this.ds_sta.filter("comboCode.indexOf('IR') == 0");
+	
+	this.ds_sta.set_enableevent(true);
+};
+
+
+
+this.btnSerch_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var strId		= "svcIstStaSerch";
+	var strUrl		= "svc::istStaSerch";
+	var inData		= "";
+	var outData		= "ds_istSta=out_istSta";
+	var param		= "page="+currentIndex+
+					  " clientName="+this.edtName.value+
+					  " clientAddr="+this.edtAddr.value+
+					  " clientPhone="+this.edtPhone.value+
+					  " istReqState="+this.Combo00.value;
+	var callBack	= "";
+	this.transaction(strId, strUrl, inData, outData, param, callBack);
+};
+
+this.Grid00_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	// ChildFrame을 생성하여 새 폼 열기
+    var objChildFrame = new ChildFrame();  // ChildFrame 객체 생성
+    objChildFrame.init("childFrame", 100, 100, 1000, 600, null, null, "Form::InstallInfo.xfdl");
+    
+	//선택된 row값
+	var rowIndex = e.row;
+	recepNum = this.ds_istSta.getColumn(rowIndex,"receptionNum");
+	
+    // 전달할 파라미터 설정
+    var oArgs = { "receiveno" : this.ds_istSta.getColumn(rowIndex,"receptionNum") };
+	
+    // 새 폼을 부모 폼에 추가 후 열기
+    objChildFrame.set_showtitlebar(true);	// 타이틀바 표시 여부 설정
+	objChildFrame.set_autosize(false);       // 자동 크기 조정 여부 설정
+    objChildFrame.showModal("childFrame", this.getOwnerFrame(), oArgs, this, "fn_callbackModal");
+};
+
+this.fn_callbackModal = function (sPopupId, sReturnValue)
+{
+	trace(sReturnValue);
+	if(sReturnValue = "refrashList"){
+		this.InstallStatus_onload();
+	}
+	if(sReturnValue = "btnAs"){
+		var arrArg = [];
+		arrArg.push(recepNum);
+		
+		this.ds_tmp.insertRow(0); // 첫 번째 행에 추가
+		this.ds_tmp.setColumn(0, "MENU_ID", this.objApp.gds_menu.getColumn(3,"MENU_ID"));
+		this.ds_tmp.setColumn(0, "MENU_NAME", this.objApp.gds_menu.getColumn(3,"MENU_NAME"));
+		this.ds_tmp.setColumn(0, "MENU_LEVEL", this.objApp.gds_menu.getColumn(3,"MENU_LEVEL"));
+		this.ds_tmp.setColumn(0, "FORM_URL", this.objApp.gds_menu.getColumn(3,"FORM_URL"));
+		this.ds_tmp.setColumn(0, "ENABLE", this.objApp.gds_menu.getColumn(3,"ENABLE"));
+		this.ds_tmp.setColumn(0, "MENU_AUTH", this.objApp.gds_menu.getColumn(3,"MENU_AUTH"));
+		
+		var objDs = this.ds_tmp;
+		
+		this.gfn_openForm(objDs, this.ds_tmp, arrArg);
+	}
+};]]></Script>
+  </Form>
+</FDL>

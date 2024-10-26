@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Combo" width="1280" height="720" titletext="New Form" onload="Combo_onload">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Div id="Div00" taborder="0" left="30" top="30" height="100" cssclass="div_WF_Search" text="" width="900">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="콤보제목" left="0" top="8" width="130" cssclass="sta_WF_SearchLabel" height="26" onclick="Div00_Static00_onclick"/>
+              <Edit id="edtTitle" taborder="1" left="130" width="200" height="26" top="8" cssclass="essential"/>
+              <Static id="Static02" taborder="2" text="콤보이름" left="439" top="8" width="130" cssclass="sta_WF_SearchLabel" height="26"/>
+              <Edit id="edtName" taborder="3" left="574" width="200" height="26" top="8" cssclass="essential"/>
+              <Static id="Static00_00" taborder="4" text="콤보코드" left="0" top="53" width="130" cssclass="sta_WF_SearchLabel" height="26"/>
+              <Edit id="edtCode" taborder="5" left="130" width="200" height="26" top="53" cssclass="essential"/>
+              <Static id="Static02_00" taborder="6" text="콤보상태" left="439" top="50" width="130" cssclass="sta_WF_SearchLabel" height="26"/>
+              <Combo id="edtState" taborder="7" left="574" top="53" width="200" height="20" value="" index="-1" text="" innerdataset="Dataset00" codecolumn="CODE" datacolumn="DATA" canitemchange="Div00_edtState_canitemchange"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Grid id="Grid00" taborder="1" left="30" top="250" width="900" height="300" binddataset="gds_comboCode" oncelldblclick="Grid00_oncelldblclick" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="48" band="left"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="NO"/>
+                <Cell col="1" text="콤보코드"/>
+                <Cell col="2" text="콤보이름"/>
+                <Cell col="3" text="콤보제목"/>
+                <Cell col="4" text="콤보상태"/>
+              </Band>
+              <Band id="body">
+                <Cell text="expr:currow+1" displaytype="text"/>
+                <Cell col="1" text="bind:comboCode"/>
+                <Cell col="2" text="bind:comboName"/>
+                <Cell col="3" text="bind:comboTitle"/>
+                <Cell col="4" text="bind:comboState"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="Button00" taborder="2" text="초기화" left="610" top="140" width="100" height="30" onclick="Button00_onclick"/>
+        <Button id="btnUpdate" taborder="3" text="수정" left="720" top="140" width="100" height="30" enable="false"/>
+        <Button id="btnSave" taborder="4" text="등록" left="830" top="140" width="100" height="30" onclick="btnSave_onclick"/>
+        <Div id="Div01" taborder="5" left="30" top="180" width="780" height="50" cssclass="div_WF_Search">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="콤보제목" left="10" top="9" width="120" height="30" cssclass="sta_WF_SearchLabel"/>
+              <Static id="Static01" taborder="1" text="콤보이름" left="454" top="9" width="120" height="30" cssclass="sta_WF_SearchLabel"/>
+              <Edit id="serchTitle" taborder="2" left="130" top="14" width="200" height="20"/>
+              <Edit id="serchName" taborder="3" left="574" top="14" width="200" height="20"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="btnSerch" taborder="6" text="조회" left="830" top="190" width="100" height="30" onclick="btnSerch_onclick"/>
+        <Static id="page1" taborder="7" text="1" left="336" top="553" width="10" height="15" onclick="Static00_onclick" color="#0000ff"/>
+        <Button id="Button01" taborder="8" text="&gt;&gt;" left="566" top="555" width="20" height="20"/>
+        <Button id="btn_right" taborder="9" text="&gt;" left="536" top="555" width="20" height="20" onclick="btn_right_onclick"/>
+        <Static id="page2" taborder="10" text="2" left="356" top="553" width="10" height="15"/>
+        <Static id="page3" taborder="11" text="3" left="376" top="553" width="10" height="15"/>
+        <Static id="page4" taborder="12" text="4" left="396" top="553" width="10" height="15"/>
+        <Static id="page5" taborder="13" text="5" left="416" top="553" width="10" height="15"/>
+        <Static id="page6" taborder="14" text="6" left="436" top="553" width="10" height="15"/>
+        <Static id="page7" taborder="15" text="7" left="456" top="553" width="10" height="15"/>
+        <Static id="page8" taborder="16" text="8" left="476" top="553" width="10" height="15"/>
+        <Static id="page9" taborder="17" text="9" left="496" top="553" width="10" height="15"/>
+        <Static id="page10" taborder="18" text="10" left="516" top="553" width="20" height="15"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[this.objApp 	  = this.gfn_getApplication();
+var currentIndex = 1;
+
+this.Combo_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{	
+	var strId    = "svcCombo";
+	var strUrl   = "svc::combo";
+	var inData   = "";
+	var outData  = "gds_comboCode=out_comboCode";
+	var param   = "page=1";
+	var callBack = "";
+	this.transaction(strId, strUrl, inData, outData, param, callBack);
+	
+	for (var i = 1; i <= 10; i++) {
+        var staticID = "page" + i;  // Static1, Static2, ... Static10
+        var staticComp = this[staticID];  // 각 Static 컴포넌트를 가져옴
+        staticComp.addEventHandler("onclick", this.onStaticClick, this);
+    }
+	
+};
+
+this.Grid00_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	var rowIndex = e.row;
+	
+	trace("더블클릭한 행의 인덱스: " + rowIndex);
+	trace("dataset::"+this.objApp.gds_comboCode.getColumn(rowIndex,"comboName"));
+	
+	this.Div00.form.edtTitle.set_value(this.objApp.gds_comboCode.getColumn(rowIndex,"comboTitle"));
+	this.Div00.form.edtName.set_value(this.objApp.gds_comboCode.getColumn(rowIndex,"comboName"));
+	this.Div00.form.edtCode.set_value(this.objApp.gds_comboCode.getColumn(rowIndex,"comboCode"));
+	this.Div00.form.edtState.set_text(this.objApp.gds_comboCode.getColumn(rowIndex,"comboState"));
+	this.Div00.form.edtState.set_value(this.objApp.gds_comboCode.getColumn(rowIndex,"comboState"));
+};
+
+this.Div00_edtState_canitemchange = function(obj:nexacro.Combo,e:nexacro.ItemChangeEventInfo)
+{
+	//콤보박스
+};
+
+this.btnSerch_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+
+// 	this.objApp.gds_comboCode.set_enableevent(false);
+// 	var expr="";
+// 	if(this.Div01.form.serchName.value==undefined ||this.Div01.form.serchTitle.value==undefined
+// 		||this.Div01.form.serchName.value==''||this.Div01.form.serchTitle.value==''){
+// 		expr = "comboName=='"+this.Div01.form.serchName.value+"' || comboTitle=='"+this.Div01.form.serchTitle.value+"'";
+// 	}else{
+// 		expr = "comboName=='"+this.Div01.form.serchName.value+"' && comboTitle=='"+this.Div01.form.serchTitle.value+"'";
+// 	}
+// 
+// 	trace(expr);
+// 	
+// 	this.objApp.gds_comboCode.filter(expr);
+// 	
+// 	this.objApp.gds_comboCode.set_enableevent(true);
+
+	var strId    = "svcComboSerch";
+	var strUrl   = "svc::comboSerch";
+	var inData   = "";
+	var outData  = "gds_comboCode=out_combo";
+	var param   = "comboTitle="+this.Div01.form.serchTitle.value+
+				  " comboName="+this.Div01.form.serchName.value;
+	var callBack = "";
+	this.transaction(strId, strUrl, inData, outData, param, callBack);
+};
+
+this.btnSave_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var sSvcID    = "svcComboInsert";
+    var sURL      = "svc::comboInsert";
+    var sInDs     = "";
+    var sOutDs    = "";
+    var sParam    = "comboName="+this.Div00.form.edtName.value+
+					" comboTitle="+this.Div00.form.edtTitle.value+
+					" comboCode="+this.Div00.form.edtCode.value;
+    var sCallBack = "";
+	
+	this.transaction(sSvcID, sURL, sInDs, sOutDs, sParam, sCallBack); 
+	
+	this.Combo.reload();
+};
+
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo) //초기화버튼
+{
+	this.Div00.form.edtTitle.set_value("");
+	this.Div00.form.edtName.set_value("");
+	this.Div00.form.edtCode.set_value("");
+};
+
+
+this.onStaticClick = function(obj, e) {
+    // 모든 Static 컴포넌트의 배경색을 기본값으로 되돌림
+    for (var i = 1; i <= 10; i++) {
+        var staticID = "page" + i;
+        var staticComp = this[staticID];
+        staticComp.set_color("black");  // 기본 배경색
+    }
+
+    // 클릭된 Static 컴포넌트만 파란색으로 변경
+	currentIndex = parseInt(obj.name.replace("page", ""));
+//	trace("Current Static Index: " + currentIndex);
+    obj.set_color("blue");
+	this.fn_paging(obj.text);
+};
+
+this.fn_paging = function (page)
+{
+	var strId    = "svcCombo";
+	var strUrl   = "svc::combo";
+	var inData   = "";
+	var outData  = "gds_comboCode=out_comboCode";
+	var param   = "page="+page;
+	var callBack = "";
+	this.transaction(strId, strUrl, inData, outData, param, callBack);
+};
+
+
+this.btn_right_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if(currentIndex%10 == 0){
+		return;
+	}
+
+    var currentStatic = this["page" + currentIndex];
+    currentStatic.set_color("black");
+
+
+    currentIndex++;
+ 
+    var nextStatic = this["page" + currentIndex];
+    nextStatic.set_color("blue");
+	this.fn_paging(currentIndex);
+};
+]]></Script>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="CODE" type="STRING" size="256"/>
+          <Column id="DATA" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="CODE">U</Col>
+            <Col id="DATA">U</Col>
+          </Row>
+          <Row>
+            <Col id="CODE">H</Col>
+            <Col id="DATA">H</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div00.form.edtState" propid="value" datasetid="Dataset00" columnid="CODE"/>
+      <BindItem id="item1" compid="Div00.form.edtState" propid="text" datasetid="Dataset00" columnid="DATA"/>
+      <BindItem id="item2" compid="Div00.form.edtState" propid="acceptvaluetype" datasetid="Dataset00" columnid="DATA"/>
+    </Bind>
+  </Form>
+</FDL>

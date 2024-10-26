@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Frame_Left" width="230" height="663" titletext="New Form" onload="Frame_Left_onload" background="#f4f6fd">
+    <Layouts>
+      <Layout height="663" mobileorientation="landscape" width="230">
+        <Div id="div_left" taborder="0" left="5" top="34" bottom="5" right="5">
+          <Layouts>
+            <Layout>
+              <Grid id="grd_menu" taborder="0" left="0" top="0" binddataset="gds_menu" autofittype="col" treeusecheckbox="false" treeinitstatus="expand,all" treeuseline="false" bottom="0" oncelldblclick="div_left_grd_menu_oncelldblclick" treeuseimage="false" right="0" cssclass="grd_LF_Menu">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="177"/>
+                    </Columns>
+                    <Rows>
+                      <Row size="30"/>
+                    </Rows>
+                    <Band id="body">
+                      <Cell text="bind:MENU_NAME" displaytype="treeitemcontrol" edittype="tree" treelevel="bind:MENU_LEVEL"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects/>
+    <Script type="xscript5.1"><![CDATA[this.objApp = this.gfn_getApplication();
+
+this.Frame_Left_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+
+};
+
+this.fn_changeMenu = function(auth)
+{
+	var strId    = "svcMenu";
+	var strUrl   = "svc::menu";
+	var inData   = "";
+	var outData  = "gds_menu=out_menu";
+	var param   = "auth="+auth;
+	var callBack = "";
+	this.transaction(strId, strUrl, inData, outData, param, callBack);
+	
+// 	this.objApp.gds_menu.set_enableevent(false);
+// 	var sExpr = "";
+// 	if(auth == 'ADMIN'){
+// 		var sExpr = "MENU_AUTH != 'SYS_ADMIN'";
+// 	}else if(auth == 'USER'){
+// 		var sExpr = "MENU_AUTH == 'USER'";
+// 	}
+// 	trace("sExpr::" +sExpr);
+// 	this.objApp.gds_menu.filter(sExpr);
+// 	
+// 	this.objApp.gds_menu.set_enableevent(true);
+};
+
+
+this.div_left_grd_menu_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	
+	var objDs = obj.getBindDataset();
+    var arrArg = [];
+
+	this.gfn_openForm(objDs, e.row, arrArg);
+
+};
+
+]]></Script>
+  </Form>
+</FDL>

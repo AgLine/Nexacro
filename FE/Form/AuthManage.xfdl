@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="AuthManage" width="1280" height="720" titletext="New Form" onload="AuthManage_onload">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Div id="Div00" taborder="0" text="권한등록&amp;수정" left="50" top="10" width="900" height="20" cssclass="div_WF_Search"/>
+        <Div id="Div01" taborder="1" left="50" top="30" width="900" height="100" cssclass="div_WF_Search" text="">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="권한명" left="0" top="10" width="120" height="20" cssclass="sta_WF_SearchLabel"/>
+              <Static id="Static01" taborder="1" text="권한ID" left="450" top="10" width="120" height="20" cssclass="sta_WF_SearchLabel"/>
+              <Edit id="edtAuthName" taborder="2" left="120" top="10" width="140" height="20"/>
+              <Edit id="edtAuthId" taborder="3" left="570" top="10" width="140" height="20"/>
+              <Static id="Static02" taborder="4" text="메뉴선택" left="0" top="40" width="120" height="30" cssclass="sta_WF_SearchLabel"/>
+              <CheckBox id="insReq" taborder="5" text="설치신청" left="120" top="45" width="80" height="20"/>
+              <CheckBox id="insSta" taborder="6" text="설치현황" left="209" top="45" width="80" height="20"/>
+              <CheckBox id="asReg" taborder="7" text="A/S등록" left="299" top="45" width="80" height="20"/>
+              <CheckBox id="asSta" taborder="8" text="A/S현황" left="389" top="45" width="80" height="20"/>
+              <CheckBox id="admMenu" taborder="9" text="관리자메뉴" left="120" top="75" width="95" height="20"/>
+              <CheckBox id="authManage" taborder="10" text="권한관리" left="220" top="75" width="80" height="20" onclick="Div01_chkAdmMenu00_onclick"/>
+              <CheckBox id="userManage" taborder="11" text="사용자관리" left="305" top="75" width="95" height="20"/>
+              <CheckBox id="proManage" taborder="12" text="사업관리" left="405" top="75" width="80" height="20"/>
+              <CheckBox id="comboManage" taborder="13" text="콤보박스관리" left="490" top="75" width="110" height="20"/>
+              <CheckBox id="staHis" taborder="14" text="상태변경이력" left="605" top="75" width="110" height="20"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Button id="btnAdd" taborder="2" text="신규등록" left="850" top="160" width="100" height="30" onclick="btnAdd_onclick"/>
+        <Button id="btnUpdate" taborder="3" text="수정" left="740" top="161" width="100" height="30" enable="false"/>
+        <Button id="btnInit" taborder="4" text="선택 초기화" left="630" top="161" width="100" height="30" onclick="btnInit_onclick"/>
+        <Button id="btnSerch" taborder="5" text="조회" left="850" top="200" width="100" height="30" onclick="btnSerch_onclick"/>
+        <Static id="Static00" taborder="6" text="권한ID" left="630" top="200" width="80" height="30" cssclass="sta_WF_SearchLabel"/>
+        <Edit id="edtId" taborder="7" left="710" top="205" width="120" height="20"/>
+        <Static id="Static00_00" taborder="8" text="권한명" left="430" top="200" width="80" height="30" cssclass="sta_WF_SearchLabel"/>
+        <Edit id="edtName" taborder="9" left="510" top="205" width="120" height="20"/>
+        <Grid id="Grid00" taborder="10" left="50" top="250" width="900" height="270" binddataset="ds_auth" autofittype="col" oncelldblclick="Grid00_oncelldblclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="100"/>
+                <Column size="100"/>
+                <Column size="700"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="권한명"/>
+                <Cell col="1" text="권한ID"/>
+                <Cell col="2" text="권 한 메 뉴"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:authorityName"/>
+                <Cell col="1" text="bind:authorityId"/>
+                <Cell col="2" text="bind:authorityMenu"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="page1" taborder="11" text="1" left="341" top="543" width="10" height="15" onclick="Static00_onclick" color="#0000ff"/>
+        <Button id="Button01_00" taborder="12" text="&gt;&gt;" left="571" top="545" width="20" height="20"/>
+        <Button id="btn_right" taborder="13" text="&gt;" left="541" top="545" width="20" height="20" onclick="btn_right_onclick"/>
+        <Static id="page2" taborder="14" text="2" left="361" top="543" width="10" height="15"/>
+        <Static id="page3" taborder="15" text="3" left="381" top="543" width="10" height="15"/>
+        <Static id="page4" taborder="16" text="4" left="401" top="543" width="10" height="15"/>
+        <Static id="page5" taborder="17" text="5" left="421" top="543" width="10" height="15"/>
+        <Static id="page6" taborder="18" text="6" left="441" top="543" width="10" height="15"/>
+        <Static id="page7" taborder="19" text="7" left="461" top="543" width="10" height="15"/>
+        <Static id="page8" taborder="20" text="8" left="481" top="543" width="10" height="15"/>
+        <Static id="page9" taborder="21" text="9" left="501" top="543" width="10" height="15"/>
+        <Static id="page10" taborder="22" text="10" left="521" top="543" width="20" height="15"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_auth">
+        <ColumnInfo>
+          <Column id="authorityName" type="STRING" size="256"/>
+          <Column id="authorityId" type="STRING" size="256"/>
+          <Column id="authorityMenu" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.objApp 	  = this.gfn_getApplication();
+
+var mapToEnglish = {
+    "설치신청": "insReq",
+    "설치현황": "insSta",
+    "A/S등록": "asReg",
+    "A/S현황": "asSta",
+    "관리자메뉴": "admMenu",
+	"권한관리": "authManage",
+	"사용자관리":"userManage",
+    "사업관리": "proManage",
+    "콤보박스관리": "comboManage",
+    "상태변경이력": "staHis"
+};
+
+var mapToKorean = {
+    "insReq": "설치신청",
+    "insSta": "설치현황",
+    "asReg": "A/S등록",
+    "asSta": "A/S현황",
+    "admMenu": "관리자메뉴",
+	"authManage": "권한관리",
+	"userManage":"사용자관리",
+    "proManage": "사업관리",
+    "comboManage": "콤보박스관리",
+    "staHis": "상태변경이력"
+};
+this.AuthManage_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	var strId    = "svcAuth";
+	var strUrl   = "svc::auth";
+	var inData   = "";
+	var outData  = "ds_auth=out_auth";
+	var param   = "";
+	var callBack = "";
+	this.transaction(strId, strUrl, inData, outData, param, callBack);
+};
+
+this.Grid00_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+	this.fn_chkFalse();
+	this.btnAdd.set_enable(false);
+	this.btnUpdate.set_enable(true);
+	this.Div01.form.edtAuthId.set_enable(false);
+	var rowIndex = e.row;
+	
+	var strArr = this.ds_auth.getColumn(rowIndex,"authorityMenu").split(",");
+	
+	for (var i = 0; i < strArr.length; i++) {
+		var koreanKey = strArr[i];  // 한글 문자열
+		var englishId = mapToEnglish[koreanKey];  // 영어 매핑 값 가져오기
+		
+		if (englishId) {
+			var checkboxObj = this.Div01.form.lookup(englishId);  // 컴포넌트 찾기
+			
+			if (checkboxObj) {
+				checkboxObj.set_value(true);  // 체크박스 체크
+			} else {
+				trace("Checkbox with ID " + checkboxId + " not found.");
+			}
+		} else {
+			trace("No mapping found for " + koreanKey);
+		}
+	}
+	this.Div01.form.edtAuthId.set_value(this.ds_auth.getColumn(rowIndex,"authorityId"));
+	this.Div01.form.edtAuthName.set_value(this.ds_auth.getColumn(rowIndex,"authorityName"));
+	
+	
+};
+
+this.fn_chkFalse = function ()
+{
+	var checkboxIds = ["insReq","insSta","asReg","asSta","admMenu","authManage","userManage","proManage","comboManage","staHis"];
+	
+	for (var i = 0; i < checkboxIds.length; i++) {
+		var checkboxObj = this.Div01.form.lookup(checkboxIds[i]);  // 체크박스 객체 찾기
+		
+		if (checkboxObj) {
+			checkboxObj.set_value(false);  // 체크박스 선택 해제
+		} else {
+			trace("Checkbox with ID " + checkboxIds[i] + " not found.");
+		}
+	}
+};
+
+
+this.btnInit_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.Div01.form.edtAuthId.set_value("");
+	this.Div01.form.edtAuthName.set_value("");
+	this.fn_chkFalse();
+	this.btnUpdate.set_enable(false);
+	this.btnAdd.set_enable(true);
+	this.Div01.form.edtAuthId.set_enable(true);
+};
+
+this.btnAdd_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var checkboxIds = ["insReq","insSta","asReg","asSta","admMenu","authManage","userManage","proManage","comboManage","staHis"];
+	var checkedId ="";
+	for (var i = 0; i < checkboxIds.length; i++) {
+		var checkboxObj = this.Div01.form.lookup(checkboxIds[i]);  // 체크박스 객체 찾기
+		
+		if (checkboxObj && checkboxObj.value) {  // 체크박스가 선택되었는지 확인
+			checkedId += mapToKorean[checkboxIds[i]]+",";
+		}
+		
+	}
+	checkedId = checkedId.slice(0, -1); //마지막 컴마 제거
+	
+	var strId    = "svcAuthInsert";
+	var strUrl   = "svc::authInsert";
+	var inData   = "";
+	var outData  = "resultMessage=resultMessage";
+	var param   = "authorityId="+this.Div01.form.edtAuthId.value+
+				  " authorityName="+this.Div01.form.edtAuthName.value+
+				  " authorityMenu="+checkedId;
+	var callBack = "fn_callBack";
+	this.transaction(strId, strUrl, inData, outData, param, callBack);
+	
+};
+
+this.btnSerch_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var strId    = "svcAuthSerch";
+	var strUrl   = "svc::authSerch";
+	var inData   = "";
+	var outData  = "ds_auth=out_auth";
+	var param   = "authorityId="+this.edtId.value+
+				  " authorityName="+this.edtName.value;
+	var callBack = "";
+	this.transaction(strId, strUrl, inData, outData, param, callBack);
+};
+
+this.fn_callBack = function ()
+{
+	if(this.objApp.resultMessage == 'idDuplicate'){
+		alert("권한아이디 중복");
+	}else if(this.objApp.resultMessage == 'nameDuplicate'){
+		alert("권한이름 중복");
+	}else if(this.objApp.resultMessage == 'SUCCESS'){
+		this.ds_auth.clearData();
+		this.btnInit_onclick();
+		
+		var strId    = "svcAuth";
+		var strUrl   = "svc::auth";
+		var inData   = "";
+		var outData  = "ds_auth=out_auth";
+		var param   = "";
+		var callBack = "";
+		this.transaction(strId, strUrl, inData, outData, param, callBack);
+	}
+	
+	this.objApp.resultMessage = '';
+	//trace(this.objApp.resultMessage);
+};]]></Script>
+  </Form>
+</FDL>

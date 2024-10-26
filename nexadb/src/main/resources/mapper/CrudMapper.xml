@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.nexadb.mapper.CrudMapper">
+	<!-- 테스트 SQL -->
+	<select id="selectAll" resultType="com.example.nexadb.crud.vo.CrudVO">
+		SELECT ID
+			  ,NAME
+			  ,TEL
+		  FROM SAMPLETABLE
+		 WHERE VISIBLE = '1'
+	</select>
+	<!-- ********************************************************************** -->
+	
+	<!-- 콤보관리 -->
+	<select id="comboSelectAll" resultType="com.example.nexadb.crud.vo.ComboVO">
+		
+		SELECT COMBO_CODE
+			  ,COMBO_NAME
+			  ,COMBO_TITLE
+			  ,COMBO_STATE
+			  ,COMBO_GROUP
+		  FROM (
+		  		SELECT ROW_NUMBER() OVER (ORDER BY combo.combo_group) AS ROW_NO
+		  			  ,COMBO_CODE
+					  ,COMBO_NAME
+					  ,COMBO_TITLE
+					  ,COMBO_STATE
+					  ,COMBO_GROUP
+				  FROM COMBO
+		  	   )
+		 WHERE ROW_NO BETWEEN #{statrRow} AND #{endRow}
+	</select>
+	
+	<select id="comboGroup" resultType="String">
+		SELECT COMBO_CODE
+		  FROM COMBO
+		 WHERE COMBO_NAME = #{comboTitle}
+	</select>
+	
+	<insert id="comboInsert">
+		INSERT INTO COMBO(
+			  COMBO_CODE
+			, COMBO_TITLE
+			, COMBO_NAME
+			, COMBO_STATE
+			, COMBO_GROUP
+			)
+		VALUES(
+			  #{comboCode}
+			, #{comboTitle}
+			, #{comboName}
+			, #{comboState}
+			, #{comboGroup}
+			) 
+	</insert>
+	
+	<select id="comboGroupSelect" resultType="com.example.nexadb.crud.vo.ComboVO">
+		SELECT COMBO_CODE
+			  ,COMBO_NAME
+			  ,COMBO_TITLE
+			  ,COMBO_STATE
+			  ,COMBO_GROUP
+		  FROM COMBO
+		 WHERE COMBO_GROUP = #{comboGroup}
+	</select>
+	
+	<select id="comboSerch" resultType="com.example.nexadb.crud.vo.ComboVO">
+		SELECT COMBO_CODE
+			  ,COMBO_NAME
+			  ,COMBO_TITLE
+			  ,COMBO_STATE
+			  ,COMBO_GROUP
+		  FROM COMBO
+		 WHERE 1=1 
+		 	<if test="comboTitle !='' and comboTitle !='undefined'"  >
+		 		AND COMBO_TITLE = #{comboTitle}
+		 	</if>
+		 	<if test="comboName !='' and comboName !='undefined'">
+		 		AND COMBO_NAME = #{comboName}
+		 	</if>
+	</select>
+	<!-- ********************************************************************** -->
+	
+	<!-- 권한관리 -->
+	<select id="authSelectAll" resultType="com.example.nexadb.crud.vo.AuthorityVO">
+		SELECT AUTHORITY_ID
+			  ,AUTHORITY_NAME
+			  ,AUTHORITY_MENU
+		  FROM AUTHORITY
+	</select>
+	
+	<insert id="authInsert">
+		INSERT INTO AUTHORITY(
+			  AUTHORITY_ID
+			, AUTHORITY_NAME
+			, AUTHORITY_MENU
+			)
+		VALUES(
+			  #{authorityId}
+			, #{authorityName}
+			, #{authorityMenu}
+			) 
+	</insert>
+	
+	<select id="idChk" resultType="int">
+		SELECT COUNT(*)
+		  FROM AUTHORITY
+		 WHERE AUTHORITY_ID = #{id}
+	</select>
+	
+	<select id="nameChk" resultType="int">
+		SELECT COUNT(*)
+		  FROM AUTHORITY
+		 WHERE AUTHORITY_NAME = #{name}
+	</select>
+	
+	<select id="authSerch" resultType="com.example.nexadb.crud.vo.AuthorityVO">
+		SELECT AUTHORITY_ID
+			  ,AUTHORITY_NAME
+			  ,AUTHORITY_MENU
+		  FROM AUTHORITY
+		 WHERE 1=1
+		 	<if test="authorityId !='' and authorityId !='undefined'"  >
+		 		AND AUTHORITY_ID = #{authorityId}
+		 	</if>
+		 	<if test="authorityName !='' and authorityName !='undefined'">
+		 		AND AUTHORITY_NAME = #{authorityName}
+		 	</if>
+	</select>
+	<!-- ********************************************************************** -->
+	
+	<!-- 사용자관리 -->
+	<select id="userSelectAll" resultType="com.example.nexadb.crud.vo.UserVO">
+		SELECT USER_NAME
+			  ,USER_ID
+			  ,AUTHORITY_ID
+			  ,USER_PHONE
+		  FROM USERTABLE
+	</select>
+	<!-- ********************************************************************** -->
+	
+	<!-- 설치신청 -->
+	<select id="clientChk" resultType="int">
+		SELECT COUNT(*)
+		  FROM CLIENT
+		 WHERE CLIENT_PHONE = #{phone}
+	</select>
+	
+	<select id="clientCnt" resultType="int">
+		SELECT COUNT(*)
+		  FROM CLIENT
+	</select>
+	
+	<select id="dealerCnt" resultType="int">
+		SELECT COUNT(*)
+		  FROM DEALER
+	</select>
+	
+	<insert id="clientInsert">
+		INSERT INTO CLIENT(
+			  CLIENT_NAME
+			, CLIENT_ID
+			, BUILDING_TYPE
+			, CLIENT_PHONE
+			, CLIENT_EMAIL
+			, CLIENT_STATE
+			)
+		VALUES(
+			  #{clientName}
+			, #{clientId}
+			, #{buildingType}
+			, #{clientPhone}
+			, #{clientEmail}
+			, #{clientState}
+			) 
+	</insert>
+	
+	<select id="dealerChk" resultType="int">
+		SELECT COUNT(*)
+		  FROM DEALER
+		 WHERE DEALER_PHONE = #{phone}
+	</select>
+	
+	<insert id="dealerInsert">
+		INSERT INTO DEALER(
+			  DEALER_NAME
+			, DEALER_ID
+			, DEALER_PHONE
+			, DEALER_BRANCH
+			, DEALER_ADDR1
+			, DEALER_ADDR2
+			)
+		VALUES(
+			  #{dealerName}
+			, #{dealerId}
+			, #{dealerPhone}
+			, #{dealerBranch}
+			, #{dealerAddr1}
+			, #{dealerAddr2} 
+			)
+	</insert>
+	
+	<select id="istReqCnt" resultType="int">
+		SELECT COUNT(*)
+		  FROM ISTREQ
+		 WHERE RECEPTION_NUM LIKE '%'||#{receptionNum}||'%'
+	</select>
+	
+	<insert id="istReqInsert">
+		INSERT INTO ISTREQ(
+			  IST_REQ_CONTRACT_NUM
+			, RECEPTION_NUM
+			, IST_REQ_DATE
+			, IST_REQ_VEHI_NUM
+			, IST_REQ_TYPE
+			, IST_REQ_VISIT_DATE
+			, IST_REQ_STATE
+			, IST_REQ_CAR
+			, IST_REQ_CAR_NAME
+			, IST_REQ_COO
+			, IST_REQ_CHARGE
+			, CLIENT_PHONE
+			, DEALER_PHONE
+			, PIC
+			, CLIENT_NAME
+			, CLIENT_EMAIL
+			)
+		VALUES(
+			  #{istReqContractNum}
+			, #{receptionNum}
+			, #{istReqDate}
+			, #{istReqVehiNum}
+			, #{istReqType}
+			, #{istReqVisitDate}
+			, #{istReqState}
+			, #{istReqCar}
+			, #{istReqCarName}
+			, #{istReqCoo}
+			, #{istReqCharge}
+			, #{clientPhone}
+			, #{dealerPhone}
+			, #{pic}
+			, #{clientName}
+			, #{clientEmail}
+		)
+	</insert>
+	<!-- ********************************************************************** -->
+	<!-- 설치현황조회 -->
+	<select id="istStaSelectAll" resultType="com.example.nexadb.crud.vo.IstStaVO">
+		SELECT RECEPTION_NUM
+			  ,CLIENT_PHONE
+			  ,CLIENT_NAME
+			  ,IST_REQ_VISIT_DATE
+			  ,IST_REQ_STATE
+			  ,PIC
+		  FROM (
+		  		SELECT ROW_NUMBER() OVER (ORDER BY ISTREQ.RECEPTION_NUM) AS ROW_NO
+		  			  ,RECEPTION_NUM
+					  ,CLIENT_PHONE
+					  ,CLIENT_NAME
+					  ,IST_REQ_VISIT_DATE
+					  ,IST_REQ_STATE
+					  ,PIC
+				  FROM ISTREQ
+		  	   )
+		 WHERE ROW_NO BETWEEN #{startRow} AND #{endRow}
+	</select>
+	
+	<select id="istStaGetName" resultType="String">
+		SELECT CLIENT_NAME
+		  FROM CLIENT
+		 WHERE CLIENT_PHONE = #{clientPhone}
+	</select>
+	
+	<select id="istStaSerch" resultType="com.example.nexadb.crud.vo.IstStaVO">
+		SELECT RECEPTION_NUM
+			  ,CLIENT_NAME
+			  ,CLIENT_ADDR
+			  ,CLIENT_PHONE
+			  ,IST_REQ_VISIT_DATE
+			  ,IST_REQ_STATE
+			  ,PIC
+		  FROM (
+		  		SELECT ROW_NUMBER() OVER (ORDER BY ISTREQ.RECEPTION_NUM) AS ROW_NO
+		  			  ,RECEPTION_NUM
+		  			  ,CLIENT_NAME
+		  			  ,CLIENT_ADDR
+					  ,CLIENT_PHONE
+					  ,IST_REQ_VISIT_DATE
+					  ,IST_REQ_STATE
+					  ,PIC
+				  FROM ISTREQ
+				 WHERE 1=1
+				 	<if test="istStaVO.clientName !='' and istStaVO.clientName !='undefined'"  >
+				 		AND CLIENT_NAME = #{istStaVO.clientName}
+				 	</if>
+				 	<if test="istStaVO.clientPhone !='' and istStaVO.clientPhone !='undefined'"  >
+				 		AND CLIENT_PHONE = #{istStaVO.clientPhone}
+				 	</if>
+				 	<if test="istStaVO.clientAddr !='' and istStaVO.clientAddr !='undefined'"  >
+				 		AND CLIENT_ADDR = #{istStaVO.clientAddr}
+				 	</if>
+				 	<if test="istStaVO.istReqState !='' and istStaVO.istReqState !='undefined'"  >
+				 		AND IST_REQ_STATE = #{istStaVO.istReqState}
+				 	</if>
+		  	   )
+		 WHERE ROW_NO BETWEEN #{startRow} AND #{endRow}
+	</select>
+	<!-- ********************************************************************** -->
+	<!-- 설치 상세페이지 -->
+	<select id="istStaSelectOne" resultType="com.example.nexadb.crud.vo.IstreqVO">
+		SELECT IST_REQ_CONTRACT_NUM
+			  ,RECEPTION_NUM
+			  ,IST_REQ_DATE
+			  ,IST_REQ_VEHI_NUM
+			  ,IST_REQ_TYPE
+			  ,IST_REQ_VISIT_DATE
+			  ,IST_REQ_CANCEL_MSG
+			  ,IST_REQ_CANCLE_REASON
+			  ,IST_REQ_CANCEL_DATE
+			  ,IST_REQ_STATE
+			  ,IST_REQ_CAR
+			  ,IST_REQ_CAR_NAME
+			  ,IST_REQ_COO
+			  ,IST_REQ_CHARGE
+			  ,CLIENT_PHONE
+			  ,DEALER_PHONE
+			  ,PIC
+			  ,CLIENT_NAME
+			  ,CLIENT_ADDR
+			  ,CLIENT_EMAIL
+		  FROM ISTREQ
+		 WHERE RECEPTION_NUM = #{receptionNum}
+	</select>
+	
+	<select id="istStaClientOne" resultType="com.example.nexadb.crud.vo.ClientVO">
+		SELECT CLIENT_NAME
+			  ,CLIENT_ID
+			  ,BUILDING_TYPE
+			  ,CLIENT_PHONE
+			  ,CLIENT_EMAIL
+			  ,CLIENT_ADDR1
+			  ,CLIENT_ADDR2
+		  FROM CLIENT
+		 WHERE CLIENT_PHONE = #{phone}
+	</select>
+	
+	<select id="istStaDealetOne" resultType="com.example.nexadb.crud.vo.DealerVO">
+		SELECT DEALER_NAME
+			  ,DEALER_ID
+			  ,DEALER_PHONE
+			  ,DEALER_BRANCH
+			  ,DEALER_ADDR1
+			  ,DEALER_ADDR2
+		  FROM DEALER
+		 WHERE DEALER_PHONE = #{phone}
+	</select>
+	<!-- ********************************************************************** -->
+	<!-- 접수수정 -->
+	<update id="istreqUdt">
+		UPDATE ISTREQ
+		   SET IST_REQ_VEHI_NUM			= #{istReqVehiNum}
+		     , IST_REQ_VISIT_DATE		= #{istReqVisitDate}
+		     , IST_REQ_CANCEL_MSG		= #{istReqCancelMsg, jdbcType=VARCHAR}
+		     , IST_REQ_CANCLE_REASON	= #{istReqCancelReason, jdbcType=VARCHAR}
+		     , IST_REQ_CANCEL_DATE		= #{istReqCancelDate, jdbcType=VARCHAR}
+		     , IST_REQ_STATE			= #{istReqState}
+		     , IST_REQ_CAR				= #{istReqCar}
+		     , IST_REQ_CAR_NAME			= #{istReqCarName}
+		     , IST_REQ_COO				= #{istReqCoo}
+		     , IST_REQ_CHARGE			= #{istReqCharge}
+		     , CLIENT_PHONE				= #{clientPhone}
+		     , DEALER_PHONE				= #{dealerPhone}
+		     , PIC						= #{pic}
+		     , CLIENT_NAME				= #{clientName}
+		     , CLIENT_ADDR				= #{clientAddr, jdbcType=VARCHAR}
+		 WHERE RECEPTION_NUM = #{receptionNum}
+	</update>
+	
+	<update id="clientUdt">
+		UPDATE CLIENT
+		   SET CLIENT_NAME		= #{clientName}
+		     , BUILDING_TYPE	= #{buildingType}
+		     , CLIENT_PHONE		= #{clientPhone}
+		     , CLIENT_EMAIL		= #{clientEmail}
+		 WHERE CLIENT_ID = #{clientId}
+	</update>
+	
+	<update id="dealerUdt">
+		UPDATE DEALER
+		   SET DEALER_NAME		= #{dealerName}
+		     , DEALER_PHONE		= #{dealerPhone}
+		     , DEALER_BRANCH	= #{dealerBranch}
+		     , DEALER_ADDR1		= #{dealerAddr1}
+		     , DEALER_ADDR2		= #{dealerAddr2}
+		 WHERE DEALER_ID = #{dealerId}
+	</update>
+	<!-- ********************************************************************** -->
+	
+	<!-- AS 접수 -->
+	<select id="asReqCnt" resultType="int">
+		SELECT COUNT(*)
+		  FROM ASREQ
+		 WHERE AS_ID LIKE '%'||#{asId}||'%'
+	</select>
+	
+	<!-- ********************************************************************** -->
+	
+	<!-- 상태변경이력 -->
+	<select id="changeHisSelectAll" resultType="com.example.nexadb.crud.vo.ChangeHisVO">
+		SELECT HIS_ID
+			  ,RECEPTION_NUM
+			  ,HIS_UPDATE_NAME
+			  ,HIS_UPDATE_DATE
+			  ,HIS_BEFORE_STATE
+			  ,HIS_AFTER_STATE
+			  ,ASIR_STATE
+		  FROM (
+		  		SELECT ROW_NUMBER() OVER (ORDER BY CHANGEHIS.HIS_ID) AS ROW_NO
+		  			  ,HIS_ID          
+		  			  ,RECEPTION_NUM   
+		  			  ,HIS_UPDATE_NAME 
+					  ,HIS_UPDATE_DATE
+					  ,HIS_BEFORE_STATE
+					  ,HIS_AFTER_STATE 
+					  ,ASIR_STATE      
+				  FROM CHANGEHIS
+		  		)
+		 WHERE ROW_NO BETWEEN #{startRow} AND #{endRow}
+	</select>
+	
+	<select id="changeHisCnt" resultType="int">
+		SELECT COUNT(*)
+		  FROM CHANGEHIS
+		 WHERE HIS_ID LIKE '%'||#{istReqDate}||'%'
+	</select>
+	
+	<insert id="changeInsert">
+		INSERT INTO CHANGEHIS(
+			   HIS_ID
+			 , RECEPTION_NUM
+			 , HIS_UPDATE_NAME
+			 , HIS_UPDATE_DATE
+			 , HIS_BEFORE_STATE
+			 , HIS_AFTER_STATE
+			 , ASIR_STATE
+			 )
+		VALUES (
+			   #{hisId}
+			 , #{receptionNum}
+			 , #{hisUpdateName}
+			 , SYSDATE
+			 , #{hisBeforeState}
+			 , #{hisAfterState}
+			 , #{asirState}
+			 ) 
+	</insert>
+	
+	<select id="changeSerch" resultType="com.example.nexadb.crud.vo.ChangeHisVO">
+	    SELECT HIS_ID
+	         , RECEPTION_NUM
+	         , HIS_UPDATE_NAME
+	         , HIS_UPDATE_DATE
+	         , HIS_BEFORE_STATE
+	         , HIS_AFTER_STATE
+	         , ASIR_STATE
+	    FROM CHANGEHIS
+	    WHERE 1=1
+	    	<if test="changeHisVO.date1 !='' and changeHisVO.date1 !='undefined' and changeHisVO.date2 !='' and changeHisVO.date2 !='undefined'"  >
+	    		AND HIS_UPDATE_DATE BETWEEN TO_DATE(#{changeHisVO.date1}, 'YYYYMMDD') AND TO_DATE(#{changeHisVO.date2}, 'YYYYMMDD') + 0.99999
+			</if>
+			<if test="changeHisVO.hisUpdateName !='' and changeHisVO.hisUpdateName !='undefined'">
+				AND HIS_UPDATE_NAME = #{changeHisVO.hisUpdateName}
+			</if>
+			<if test="changeHisVO.hisAfterState !='' and changeHisVO.hisAfterState !='undefined'">
+				AND HIS_AFTER_STATE = #{changeHisVO.hisAfterState}
+			</if>
+			<if test="changeHisVO.asirState !='' and changeHisVO.asirState !='undefined'">
+				AND ASIR_STATE = #{changeHisVO.asirState}
+			</if>
+	</select>
+	<!-- ********************************************************************** -->
+</mapper>

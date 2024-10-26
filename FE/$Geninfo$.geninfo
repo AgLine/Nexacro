@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <GenInfo version="1.1">
+    <Rule>
+      <ENV rule_version="1.05"/>
+      <ADL rule_version="1.14"/>
+      <FDL rule_version="1.04"/>
+      <XCSS rule_version="1.04"/>
+      <Script rule_version="1.02"/>
+      <GeneratorInfo rule_version="1.3"/>
+    </Rule>
+    <Info project="D:\넥사크로\EduSysN\" generated="D:\cinplus\nexadb\src\main\resources\static\EduSysN\">
+      <File url="environment.xml" checksum="20240912114002" errormsg=""/>
+      <File url="typedefinition.xml" checksum="20240909210300" errormsg=""/>
+      <File url="appvariables.xml" checksum="20240927142201" errormsg=""/>
+      <File url="_resource_\_theme_\Edu\theme.xcss" checksum="20240529164408" errormsg=""/>
+      <File url="nexacrolib\framework\Framework.json" checksum="20231214191640" errormsg=""/>
+      <File url="nexacrolib\resources\Resource.json" checksum="20231214191642" errormsg=""/>
+      <File url="nexacrolib\component\CompBase.json" checksum="20231214191632" errormsg=""/>
+      <File url="nexacrolib\component\ComComp.json" checksum="20231214191632" errormsg=""/>
+      <File url="nexacrolib\component\Grid.json" checksum="20231214191636" errormsg=""/>
+      <File url="nexacrolib\component\DeviceAPI.json" checksum="20231214191634" errormsg=""/>
+      <File url="nexacrolib\component\ListView.json" checksum="20231214191644" errormsg=""/>
+      <File url="nexacrolib\component\EduJS.json" checksum="20240529164414" errormsg=""/>
+      <File url="EduSysN.xadl" checksum="20240529164408" errormsg=""/>
+      <File url="FrameBase\Frame_Left.xfdl" checksum="20240925145210" errormsg=""/>
+      <File url="FrameBase\Frame_Bottom.xfdl" checksum="20240529164412" errormsg=""/>
+      <File url="FrameBase\Frame_Login.xfdl" checksum="20240918164028" errormsg=""/>
+      <File url="FrameBase\Frame_Main.xfdl" checksum="20240529164412" errormsg=""/>
+      <File url="FrameBase\Frame_Mdi.xfdl" checksum="20240529164412" errormsg=""/>
+      <File url="FrameBase\Frame_Top.xfdl" checksum="20240912143039" errormsg=""/>
+      <File url="FrameBase\Frame_Work.xfdl" checksum="20240916181155" errormsg=""/>
+      <File url="FrameBase\Frame_WorkTitle.xfdl" checksum="20240529164412" errormsg=""/>
+      <File url="Comm\Comm_Alert.xfdl" checksum="20240529164412" errormsg=""/>
+      <File url="Comm\Comm_CalendarFromTo.xfdl" checksum="20240529164412" errormsg=""/>
+      <File url="Comm\Comm_CalendarMonth.xfdl" checksum="20240529164412" errormsg=""/>
+      <File url="Comm\Comm_CalendarMonth_Sub.xfdl" checksum="20240529164412" errormsg=""/>
+      <File url="Comm\Comm_ColumnHide.xfdl" checksum="20240529164412" errormsg=""/>
+      <File url="Comm\Comm_Confirm.xfdl" checksum="20240529164412" errormsg=""/>
+      <File url="Comm\Comm_Debug.xfdl" checksum="20240529164412" errormsg=""/>
+      <File url="Comm\Comm_FindReplace.xfdl" checksum="20240529164412" errormsg=""/>
+      <File url="Comm\Comm_GridFilter.xfdl" checksum="20240529164412" errormsg=""/>
+      <File url="Comm\Comm_MultiCombo.xfdl" checksum="20240529164412" errormsg=""/>
+      <File url="Comm\Comm_MultiCombo2.xfdl" checksum="20240529164412" errormsg=""/>
+      <File url="Form\Form_ScriptSample1.xfdl" checksum="20240529164412" errormsg=""/>
+      <File url="Form\Form_ScriptSample2.xfdl" checksum="20240905140614" errormsg=""/>
+      <File url="Form\Form_ScriptSample3.xfdl" checksum="20240905163026" errormsg=""/>
+      <File url="Form\Popup_DeptSearch.xfdl" checksum="20240529164412" errormsg=""/>
+      <File url="Sample\Sample_Calendar.xfdl" checksum="20240529164414" errormsg=""/>
+      <File url="Sample\Sample_CommCode.xfdl" checksum="20240529164414" errormsg=""/>
+      <File url="Sample\Sample_DragDrop.xfdl" checksum="20240529164414" errormsg=""/>
+      <File url="Sample\Sample_Grid.xfdl" checksum="20240905143952" errormsg=""/>
+      <File url="Sample\Sample_Message.xfdl" checksum="20240905160946" errormsg=""/>
+      <File url="Sample\Sample_MultiCombo.xfdl" checksum="20240529164414" errormsg=""/>
+      <File url="Sample\Sample_Popup.xfdl" checksum="20240529164414" errormsg=""/>
+      <File url="Sample\Sample_PopupSub.xfdl" checksum="20240529164414" errormsg=""/>
+      <File url="Sample\Sample_Script.xfdl" checksum="20240529164414" errormsg=""/>
+      <File url="Sample\Sample_Transaction.xfdl" checksum="20240529164414" errormsg=""/>
+      <File url="Sample\Sample_TransactionSpring.xfdl" checksum="20240529164414" errormsg=""/>
+      <File url="Sample\Sample_Validation.xfdl" checksum="20240529164414" errormsg=""/>
+      <File url="Guide\Guide_Comp01.xfdl" checksum="20240529164412" errormsg=""/>
+      <File url="Guide\Guide_Comp02.xfdl" checksum="20240529164412" errormsg=""/>
+      <File url="Guide\Guide_Comp03.xfdl" checksum="20240529164412" errormsg=""/>
+      <File url="Guide\Guide_Comp04.xfdl" checksum="20240529164412" errormsg=""/>
+      <File url="Guide\Guide_Form01.xfdl" checksum="20240529164412" errormsg=""/>
+      <File url="Guide\Guide_Form02.xfdl" checksum="20240529164412" errormsg=""/>
+      <File url="Guide\Guide_Form03.xfdl" checksum="20240529164412" errormsg=""/>
+      <File url="Guide\Guide_Form04.xfdl" checksum="20240529164412" errormsg=""/>
+      <File url="Guide\Guide_Popup.xfdl" checksum="20240529164412" errormsg=""/>
+      <File url="Lib\Lib_Comm.xjs" checksum="20240905135706" errormsg=""/>
+      <File url="Lib\Lib_Grid.xjs" checksum="20240905131318" errormsg=""/>
+      <File url="Lib\Lib_test.xjs" checksum="20240905112406" errormsg=""/>
+      <File url="Lib\Lib_Util.xjs" checksum="20240905112636" errormsg=""/>
+      <File url="pratice\test.xfdl" checksum="20240911155514" errormsg=""/>
+      <File url="Pratice\InstallReu.xfdl" checksum="20240912153444" errormsg=""/>
+      <File url="Form\InstallReq.xfdl" checksum="20241018105041" errormsg=""/>
+      <File url="Form\Combo.xfdl" checksum="20241011171514" errormsg=""/>
+      <File url="Form\AuthManage.xfdl" checksum="20241008104151" errormsg=""/>
+      <File url="Form\UserManage.xfdl" checksum="20241001150850" errormsg=""/>
+      <File url="Form\InstallStatus.xfdl" checksum="20241021113617" errormsg=""/>
+      <File url="Lib\Lib_Paging.xjs" checksum="20241009224913" errormsg=""/>
+      <File url="Form\IstReqCancel.xfdl" checksum="20241010002238" errormsg=""/>
+      <File url="Form\InstallInfo.xfdl" checksum="20241018164058" errormsg=""/>
+      <File url="Form\ChangesHis.xfdl" checksum="20241014162617" errormsg=""/>
+      <File url="Form\AsReq.xfdl" checksum="20241026022545" errormsg=""/>
+      <File url="Form\AsStatus.xfdl" checksum="20241024142034" errormsg=""/>
+    </Info>
+  </GenInfo>
+</root>

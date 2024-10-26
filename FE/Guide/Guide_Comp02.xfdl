@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Guide_Comp02" width="1028" height="730" titletext="버튼" onload="Form_onload">
+    <Layouts>
+      <Layout height="730" width="1028">
+        <Static id="Static06_00_00_00_00_00_00_00" taborder="102" left="10" top="640" height="82" cssclass="sta_WF_GLabel" width="100" text="찾기"/>
+        <Static id="Static04_03_02_00_00_00_00_00" taborder="103" left="109" top="640" height="82" cssclass="sta_WF_GArea" width="898"/>
+        <Static id="Static06_00_00_00_00_00_00" taborder="100" left="10" top="559" height="82" cssclass="sta_WF_GLabel" width="100" text="행추가&#13;&#10;행삭제"/>
+        <Static id="Static04_03_02_00_00_00_00" taborder="101" left="109" top="559" height="82" cssclass="sta_WF_GArea" width="898"/>
+        <Static id="Static04_03_02_00_00" taborder="96" left="109" top="397" height="82" cssclass="sta_WF_GArea" width="300"/>
+        <Static id="Static04_03_01_00_00_00" taborder="94" left="707" top="397" height="82" cssclass="sta_WF_GArea" width="300"/>
+        <Static id="Static04_03_00_00_00_00" taborder="95" left="408" top="397" height="82" cssclass="sta_WF_GArea" width="300"/>
+        <Static id="Static04_03_01_00" taborder="86" left="707" top="235" height="82" cssclass="sta_WF_GArea" width="300"/>
+        <Static id="Static04_03_00_00" taborder="87" left="408" top="235" height="82" cssclass="sta_WF_GArea" width="300"/>
+        <Button id="btn_14" taborder="8" text="가나" left="468" top="261" width="54" height="26" enable="false" cssclass="btn_WF_Main"/>
+        <Button id="btn_30" taborder="13" text="가나" left="737" top="261" width="54" height="26" cssclass="btn_WF_Main"/>
+        <Button id="btn_31" taborder="14" text="가나다" left="796" top="261" width="66" height="26" cssclass="btn_WF_Main"/>
+        <Button id="btn_28" taborder="21" left="164" top="666" width="30" height="26" cssclass="btn_WF_Find"/>
+        <Button id="btn_85" taborder="23" text="가나" left="468" top="423" width="54" height="26" cssclass="btn_WF_Detail" enable="false"/>
+        <Static id="Static00" taborder="24" text="Components Guide - 버튼" left="10" top="10" height="26" usedecorate="true" cssclass="sta_WF_TitleMain" right="450"/>
+        <Button id="btn_71" taborder="29" text="가나" left="737" top="423" width="54" height="26" cssclass="btn_WF_Detail"/>
+        <Static id="sta_27_00_00_00" left="781" top="239" width="28" height="20" taborder="38" text="W 5" visible="true" cssclass="sta_WF_GTxt"/>
+        <Static id="sta_01_00_00_00" left="791" top="259" width="5" height="9" taborder="39" visible="true" cssclass="sta_WF_GLineH"/>
+        <Button id="btn_71_00" taborder="43" text="가나" left="796" top="423" width="54" height="26" cssclass="btn_WF_Detail"/>
+        <Button id="btn_add" taborder="48" top="588" width="25" height="25" onclick="btn_add_onclick" cssclass="btn_WF_Add" left="169"/>
+        <Button id="btn_del" taborder="49" top="588" height="25" onclick="btn_del_onclick" width="25" cssclass="btn_WF_Del" left="199"/>
+        <Static id="Static83_00_00" taborder="50" text="&lt;fc v='red'&gt;class =btn_WF_Detail&lt;/fc&gt;" left="233" top="428" width="149" height="26" visible="true" usedecorate="true"/>
+        <Static id="sta_27_00_00_00_00_00" left="781" top="400" width="28" height="20" taborder="51" text="W 5" visible="true" cssclass="sta_WF_GTxt"/>
+        <Static id="sta_01_00_00_00_00_00" left="791" top="420" width="5" height="9" taborder="52" visible="true" cssclass="sta_WF_GLineH"/>
+        <Static id="sta_01_00_01_00_00_01" left="150" top="665" width="9" height="26" taborder="63" visible="true" cssclass="sta_WF_GLineV"/>
+        <Static id="sta_27_00_01_00_00_01" left="125" top="670" width="26" height="20" taborder="64" text="h26" visible="true" cssclass="sta_WF_GTxt"/>
+        <Static id="sta_01_00_00_00_00_00_00_01" left="164" top="697" width="30" height="9" taborder="65" visible="true" cssclass="sta_WF_GLineH"/>
+        <Static id="sta_27_00_01_00_00_00_00_01" left="166" top="704" width="28" height="20" taborder="66" text="W30" visible="true" cssclass="sta_WF_GTxt"/>
+        <Static id="Static83_00_00_00_00_00" taborder="67" text="&lt;fc v='red'&gt;class=btn_WF_Find&lt;/fc&gt;" left="233" top="671" width="196" height="21" visible="true" usedecorate="true"/>
+        <Static id="sta_01_00_01_00_00_00_00" left="150" top="588" width="9" height="25" taborder="68" visible="true" cssclass="sta_WF_GLineV"/>
+        <Static id="sta_27_00_01_00_00_00_01" left="125" top="588" width="26" height="20" taborder="69" text="h25" visible="true" cssclass="sta_WF_GTxt"/>
+        <Static id="sta_01_00_00_00_00_00_00_02" left="169" top="615" width="25" height="9" taborder="70" visible="true" cssclass="sta_WF_GLineH"/>
+        <Static id="sta_27_00_01_00_00_00_00_02" left="169" top="622" width="28" height="20" taborder="71" text="W25" visible="true" cssclass="sta_WF_GTxt"/>
+        <Static id="sta_01_00_00_00_00_00_00_00_00" left="194" top="583" width="5" height="9" taborder="72" visible="true" cssclass="sta_WF_GLineH"/>
+        <Static id="sta_27_00_01_00_00_00_00_00_00" left="185" top="564" width="26" height="20" taborder="73" text="W 5" visible="true" cssclass="sta_WF_GTxt"/>
+        <Button id="btn_add00" taborder="74" top="588" width="25" height="25" onclick="btn_add_onclick" cssclass="btn_WF_Add" left="468"/>
+        <Button id="btn_del00" taborder="75" top="588" height="25" onclick="btn_del_onclick" width="25" cssclass="btn_WF_Del" left="737"/>
+        <Static id="Static83_00_00_00_00_01" taborder="76" text="&lt;fc v='red'&gt;class=btn_WF_Add&lt;/fc&gt;" left="538" top="590" width="139" height="21" visible="true" usedecorate="true"/>
+        <Static id="Static83_00_00_00_01" taborder="77" text="&lt;fc v='red'&gt;class=btn_WF_Del&lt;/fc&gt;" left="807" top="590" width="139" height="21" visible="true" usedecorate="true"/>
+        <Static id="Static04_03_00" taborder="78" left="408" top="80" height="156" cssclass="sta_WF_GArea" width="300"/>
+        <Static id="Static04_00" taborder="79" left="408" top="50" height="31" cssclass="sta_WF_GTitle" width="300" text="disabled"/>
+        <Static id="Static04_01" taborder="80" left="109" top="50" height="31" cssclass="sta_WF_GTitle" width="300" text="normal"/>
+        <Static id="Static04_03" taborder="81" left="109" top="80" height="156" cssclass="sta_WF_GArea" width="300"/>
+        <Static id="Static06_00" taborder="82" left="10" top="80" height="156" cssclass="sta_WF_GLabel" width="100" text="Basic"/>
+        <Static id="Static53" taborder="83" left="10" top="50" height="31" cssclass="sta_WF_GTitle" width="100" text=""/>
+        <Static id="Static04_01_00" taborder="84" left="707" top="50" height="31" cssclass="sta_WF_GTitle" width="300" text="화면 정렬 가이드"/>
+        <Static id="Static04_03_01" taborder="85" left="707" top="80" height="156" cssclass="sta_WF_GArea" width="300"/>
+        <Static id="sta_27_00" left="125" top="96" width="26" height="26" taborder="35" text="h26" visible="true" cssclass="sta_WF_GTxt"/>
+        <Static id="sta_01_00" left="150" top="90" width="9" height="26" taborder="34" visible="true" cssclass="sta_WF_GLineV"/>
+        <Static id="sta_03" taborder="33" text="W 90" left="329" top="199" width="34" height="22" visible="true"/>
+        <Static id="sta_02" taborder="32" text="W 78" left="329" top="164" width="34" height="22" visible="true"/>
+        <Button id="btn_00" taborder="0" text="가나" left="169" top="90" width="54" height="26"/>
+        <Static id="sta_00" taborder="30" text="W 54" left="329" top="94" width="34" height="22" visible="true"/>
+        <Button id="btn_04" taborder="3" text="가나다라마" left="169" top="195" width="90" height="26"/>
+        <Button id="btn_03" taborder="2" text="가나다라" left="169" top="160" width="78" height="26"/>
+        <Button id="btn_01" taborder="1" text="가나다" left="169" top="125" width="66" height="26"/>
+        <Static id="sta_01" taborder="31" text="W 66" left="329" top="129" width="34" height="22" visible="true"/>
+        <Button id="btn_02" taborder="4" text="가나다" left="468" top="125" width="66" height="26" enable="false"/>
+        <Button id="btn_05" taborder="5" text="가나다라" left="468" top="160" width="78" height="26" enable="false"/>
+        <Button id="btn_06" taborder="6" text="가나다라마" left="468" top="195" width="90" height="26" enable="false"/>
+        <Button id="btn_07" taborder="7" text="가나" left="468" top="90" width="54" height="26" enable="false"/>
+        <Static id="Static01" taborder="25" text="&lt;fc v='royalblue'&gt;※ 최소 2글자 기준으로 한글자에 12px 증가&lt;/fc&gt;" left="300" top="15" width="280" height="21" usedecorate="true"/>
+        <Button id="btn_44" taborder="26" text="가나다" left="737" top="160" width="66" height="26"/>
+        <Button id="btn_45" taborder="27" text="가나다" left="808" top="160" width="66" height="26"/>
+        <Button id="btn_46" taborder="28" text="가나다" left="879" top="160" width="66" height="26"/>
+        <Static id="sta_27_00_00" left="793" top="137" width="28" height="20" taborder="36" text="W 5" visible="true" cssclass="sta_WF_GTxt"/>
+        <Static id="sta_01_00_00" left="803" top="154" width="5" height="9" taborder="37" visible="true" cssclass="sta_WF_GLineH"/>
+        <Static id="Static04_03_02" taborder="88" left="109" top="235" height="82" cssclass="sta_WF_GArea" width="300"/>
+        <Static id="Static06_00_00" taborder="89" left="10" top="235" height="82" cssclass="sta_WF_GLabel" width="100" text="Main"/>
+        <Button id="btn_15" taborder="9" text="가나" left="169" top="261" width="54" height="26" cssclass="btn_WF_FrmMain"/>
+        <Static id="sta_01_00_01" left="150" top="261" width="9" height="26" taborder="40" visible="true" cssclass="sta_WF_GLineV"/>
+        <Static id="sta_27_00_01" left="125" top="270" width="26" height="26" taborder="41" text="h26" visible="true" cssclass="sta_WF_GTxt"/>
+        <Static id="Static83" taborder="12" text="&lt;fc v='red'&gt;class = btn_WF_FrmMain&lt;/fc&gt;" left="233" top="266" width="169" height="26" visible="true" usedecorate="true"/>
+        <Static id="Static04_03_01_00_00" taborder="90" left="707" top="316" height="82" cssclass="sta_WF_GArea" width="300"/>
+        <Static id="Static04_03_00_00_00" taborder="91" left="408" top="316" height="82" cssclass="sta_WF_GArea" width="300"/>
+        <Static id="Static04_03_02_00" taborder="92" left="109" top="316" height="82" cssclass="sta_WF_GArea" width="300"/>
+        <Static id="Static06_00_00_00" taborder="93" left="10" top="316" height="82" cssclass="sta_WF_GLabel" width="100" text="Sub"/>
+        <Button id="btn_26" taborder="10" text="가나" left="468" top="342" width="54" height="26" enable="false" cssclass="btn_WF_Sub"/>
+        <Static id="sta_01_00_00_00_00" left="791" top="340" width="5" height="9" taborder="45" visible="true" cssclass="sta_WF_GLineH"/>
+        <Static id="sta_27_00_00_00_00" left="781" top="320" width="28" height="20" taborder="44" text="W 5" visible="true" cssclass="sta_WF_GTxt"/>
+        <Button id="btn_27" taborder="11" text="가나" left="169" top="342" width="54" height="26" cssclass="btn_WF_FrmSub"/>
+        <Button id="btn_34" taborder="16" text="가나다" left="796" top="342" width="66" height="26" cssclass="btn_WF_Sub"/>
+        <Button id="btn_33" taborder="15" text="가나" left="737" top="342" width="54" height="26" cssclass="btn_WF_Sub"/>
+        <Static id="sta_01_00_01_00" left="150" top="342" width="9" height="26" taborder="46" visible="true" cssclass="sta_WF_GLineV"/>
+        <Static id="sta_27_00_01_00" left="125" top="347" width="26" height="26" taborder="47" text="h26" visible="true" cssclass="sta_WF_GTxt"/>
+        <Static id="Static83_00" taborder="42" text="&lt;fc v='red'&gt;btn_WF_FrmSub&lt;/fc&gt;" left="233" top="347" width="169" height="26" visible="true" usedecorate="true"/>
+        <Static id="Static06_00_00_00_00" taborder="97" left="10" top="397" height="82" cssclass="sta_WF_GLabel" width="100" text="Detail"/>
+        <Button id="btn_81" taborder="22" text="가나" left="169" top="423" width="54" height="26" cssclass="btn_WF_Detail"/>
+        <Static id="sta_01_00_01_00_00" left="150" top="423" width="9" height="26" taborder="53" visible="true" cssclass="sta_WF_GLineV"/>
+        <Static id="sta_27_00_01_00_00" left="125" top="426" width="26" height="26" taborder="54" text="h26" visible="true" cssclass="sta_WF_GTxt"/>
+        <Static id="Static04_03_02_00_00_00" taborder="98" left="109" top="478" height="82" cssclass="sta_WF_GArea" width="898"/>
+        <Static id="Static06_00_00_00_00_00" taborder="99" left="10" top="478" height="82" cssclass="sta_WF_GLabel" width="100" text="Popup"/>
+        <Button id="btn_16" taborder="17" text="확인" left="169" top="505" width="60" height="26" cssclass="btn_POP_Btn"/>
+        <Button id="btn_17" taborder="18" text="취소" left="235" top="505" width="60" height="26" cssclass="btn_POP_Cancel"/>
+        <Static id="sta_01_00_01_00_00_00" left="150" top="505" width="9" height="26" taborder="55" visible="true" cssclass="sta_WF_GLineV"/>
+        <Static id="sta_27_00_01_00_00_00" left="125" top="508" width="26" height="26" taborder="56" text="h28" visible="true" cssclass="sta_WF_GTxt"/>
+        <Static id="sta_01_00_00_00_00_00_00" left="169" top="536" width="60" height="9" taborder="57" visible="true" cssclass="sta_WF_GLineH"/>
+        <Static id="sta_27_00_01_00_00_00_00" left="186" top="538" width="28" height="20" taborder="58" text="W60" visible="true" cssclass="sta_WF_GTxt"/>
+        <Static id="sta_01_00_00_00_00_00_00_00" left="229" top="500" width="6" height="9" taborder="59" visible="true" cssclass="sta_WF_GLineH"/>
+        <Static id="sta_27_00_01_00_00_00_00_00" left="220" top="481" width="26" height="20" taborder="60" text="W 6" visible="true" cssclass="sta_WF_GTxt"/>
+        <Button id="btn_51" taborder="19" text="확인" left="468" top="505" width="60" height="26" cssclass="btn_POP_Btn"/>
+        <Button id="btn_52" taborder="20" text="취소" left="737" top="505" width="60" height="26" cssclass="btn_POP_Cancel"/>
+        <Static id="Static83_00_00_00" taborder="61" text="&lt;fc v='red'&gt;class=btn_POP_Cancel&lt;/fc&gt;" left="807" top="509" width="179" height="26" visible="true" usedecorate="true"/>
+        <Static id="Static83_00_00_00_00" taborder="62" text="&lt;fc v='red'&gt;class=btn_POP_Btn&lt;/fc&gt;" left="538" top="509" width="179" height="26" visible="true" usedecorate="true"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[]]></Script>
+  </Form>
+</FDL>

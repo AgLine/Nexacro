@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="ChangesHis" width="1280" height="720" titletext="New Form" onload="ChangesHis_onload">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Calendar id="calStart" taborder="0" left="120" top="20" width="150" height="20"/>
+        <Calendar id="calEnd" taborder="1" left="285" top="20" width="150" height="20"/>
+        <Static id="Static00" taborder="2" text="변경일" left="50" top="20" width="70" height="20" cssclass="sta_WF_SearchLabel"/>
+        <Static id="Static01" taborder="3" text="성명" left="63" top="50" width="60" height="20" cssclass="sta_WF_SearchLabel"/>
+        <Static id="Static02" taborder="4" text="설치AS구분" left="430" top="50" width="90" height="20" cssclass="sta_WF_SearchLabel"/>
+        <Edit id="edtName" taborder="5" left="120" top="50" width="100" height="20"/>
+        <Combo id="cmbSta" taborder="6" text="Combo00" left="280" top="50" width="150" height="20" innerdataset="ds_sta" datacolumn="comboName" codecolumn="comboCode"/>
+        <Button id="btnSerch" taborder="7" text="조회" left="690" top="30" width="120" height="30" onclick="btnSerch_onclick"/>
+        <Static id="Static03" taborder="8" text="~" left="270" top="20" width="15" height="20" font="bold 12px/normal &quot;Verdana&quot;,&quot;Malgun Gothic&quot;"/>
+        <Grid id="Grid00" taborder="9" left="50" top="90" width="900" height="270" binddataset="ds_change" autofittype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="120"/>
+                <Column size="80"/>
+                <Column size="120"/>
+                <Column size="87"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="설치신청ID"/>
+                <Cell col="1" text="변경자"/>
+                <Cell col="2" text="변경일시"/>
+                <Cell col="3" text="변경전상태"/>
+                <Cell col="4" text="변경후상태"/>
+                <Cell col="5" text="설치AS구분"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:receptionNum"/>
+                <Cell col="1" text="bind:hisUpdateName"/>
+                <Cell col="2" text="bind:hisUpdateDate"/>
+                <Cell col="3" text="bind:hisBeforeState"/>
+                <Cell col="4" text="bind:hisAfterState"/>
+                <Cell col="5" text="bind:asirState"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Static id="page1" taborder="10" text="1" left="336" top="553" width="10" height="15" onclick="Static00_onclick" color="#0000ff"/>
+        <Button id="Button01" taborder="11" text="&gt;&gt;" left="566" top="555" width="20" height="20"/>
+        <Button id="btn_right" taborder="12" text="&gt;" left="536" top="555" width="20" height="20" onclick="btn_right_onclick"/>
+        <Static id="page2" taborder="13" text="2" left="356" top="553" width="10" height="15"/>
+        <Static id="page3" taborder="14" text="3" left="376" top="553" width="10" height="15"/>
+        <Static id="page4" taborder="15" text="4" left="396" top="553" width="10" height="15"/>
+        <Static id="page5" taborder="16" text="5" left="416" top="553" width="10" height="15"/>
+        <Static id="page6" taborder="17" text="6" left="436" top="553" width="10" height="15"/>
+        <Static id="page7" taborder="18" text="7" left="456" top="553" width="10" height="15"/>
+        <Static id="page8" taborder="19" text="8" left="476" top="553" width="10" height="15"/>
+        <Static id="page9" taborder="20" text="9" left="496" top="553" width="10" height="15"/>
+        <Static id="page10" taborder="21" text="10" left="516" top="553" width="20" height="15"/>
+        <Static id="Static04" taborder="22" text="상태" left="220" top="50" width="60" height="20" cssclass="sta_WF_SearchLabel"/>
+        <Combo id="cmbAsir" taborder="23" text="Combo00" left="520" top="50" width="150" height="20" innerdataset="ds_asir" datacolumn="comboName" codecolumn="comboCode"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[var currentIndex = 1;
+
+this.ChangesHis_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	var strId    = "svcComboGroup";
+	var strUrl   = "svc::comboGroup";
+	var inData   = "";
+	var outData  = "ds_sta=out_combo";
+	var param  	 = "comboGroup=STATE";
+	var callBack = "";
+	this.transaction(strId, strUrl, inData, outData, param, callBack);
+	
+	var strId    = "svcComboGroup2";
+	var strUrl   = "svc::comboGroup";
+	var inData   = "";
+	var outData  = "ds_asir=out_combo";
+	var param  	 = "comboGroup=CLASSIFICATION";
+	var callBack = "";
+	this.transaction(strId, strUrl, inData, outData, param, callBack);
+	
+	this.fn_paging(currentIndex);
+	
+	for (var i = 1; i <= 10; i++) {
+        var staticID = "page" + i;  // Static1, Static2, ... Static10
+        var staticComp = this[staticID];  // 각 Static 컴포넌트를 가져옴
+        staticComp.addEventHandler("onclick", this.onStaticClick, this);
+    }
+};
+
+this.btnSerch_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var strId    = "svcChangeSerch";
+	var strUrl   = "svc::changeSerch";
+	var inData   = "";
+	var outData  = "ds_change=out_change";
+	var param  	 = "date1="+this.calStart.value+
+				   " date2="+this.calEnd.value+
+				   " hisUpdateName="+this.edtName.value+
+				   " asirState="+this.cmbAsir.value+
+				   " hisAfterState="+this.cmbSta.value;
+	var callBack = "";
+	this.transaction(strId, strUrl, inData, outData, param, callBack);
+};
+
+
+this.fn_paging = function (page)
+{
+	var strId    = "svcChangeHis";
+	var strUrl   = "svc::changeHis";
+	var inData   = "";
+	var outData  = "ds_change=out_change";
+	var param   = "page="+page;
+	var callBack = "";
+	this.transaction(strId, strUrl, inData, outData, param, callBack);
+};
+
+this.onStaticClick = function(obj, e) {
+    // 모든 Static 컴포넌트의 배경색을 기본값으로 되돌림
+    for (var i = 1; i <= 10; i++) {
+        var staticID = "page" + i;
+        var staticComp = this[staticID];
+        staticComp.set_color("black");  // 기본 배경색
+    }
+
+    // 클릭된 Static 컴포넌트만 파란색으로 변경
+	currentIndex = parseInt(obj.name.replace("page", ""));
+//	trace("Current Static Index: " + currentIndex);
+    obj.set_color("blue");
+	this.fn_paging(obj.text);
+};
+
+this.btn_right_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if(currentIndex%10 == 0){
+		return;
+	}
+
+    var currentStatic = this["page" + currentIndex];
+    currentStatic.set_color("black");
+
+
+    currentIndex++;
+ 
+    var nextStatic = this["page" + currentIndex];
+    nextStatic.set_color("blue");
+	this.fn_paging(currentIndex);
+};]]></Script>
+    <Objects>
+      <Dataset id="ds_sta">
+        <ColumnInfo>
+          <Column id="comboName" type="STRING" size="256"/>
+          <Column id="comboCode" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_change">
+        <ColumnInfo>
+          <Column id="hisId" type="STRING" size="256"/>
+          <Column id="receptionNum" type="STRING" size="256"/>
+          <Column id="hisUpdateName" type="STRING" size="256"/>
+          <Column id="hisUpdateDate" type="STRING" size="256"/>
+          <Column id="hisBeforeState" type="STRING" size="256"/>
+          <Column id="hisAfterState" type="STRING" size="256"/>
+          <Column id="asirState" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_asir">
+        <ColumnInfo>
+          <Column id="comboName" type="STRING" size="256"/>
+          <Column id="comboCode" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>
