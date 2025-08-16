@@ -54,3 +54,9 @@ Spring Boot와 Nexacro를 연동하여 실제 ERP 시스템과 유사한 구조�
 
 ---
 ## 📷 실행 화면
+<img width="1153" height="594" alt="portfolio-details-6-1" src="https://github.com/user-attachments/assets/e1907025-213f-48f2-a172-883c167e5849" />
+<img width="1920" height="927" alt="portfolio-details-6-2" src="https://github.com/user-attachments/assets/be8ad19c-6f83-4e04-8bfd-8627f83d1607" />
+<img width="1920" height="925" alt="portfolio-details-6-3" src="https://github.com/user-attachments/assets/7f41bf2b-2c78-494d-8781-a61e0b22e722" />
+<img width="1918" height="921" alt="portfolio-details-6-4" src="https://github.com/user-attachments/assets/13ef2f9c-3c4c-4ea8-8d97-0b8241494769" />
+
+
